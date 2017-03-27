@@ -45,7 +45,8 @@ setup(
     # Maybe the pbtools-* should really be done in a subparser style
     entry_points={'console_scripts': [
         'make-subreads-bam-from-fasta = svkits.make_subreads_bam_from_fasta:main',
-        'make-subreads-bam-from-zmws = svkits.make_subreads_bam_from_zmws:main'
+        'make-subreads-bam-from-zmws = svkits.make_subreads_bam_from_zmws:main',
+        'validate-sv-bed = svkits.validate_sv_bed:main'
     ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),
     tests_require=['nose'],

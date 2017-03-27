@@ -48,5 +48,8 @@ def run(args):
     return 0
 
 
-if __name__ == "__main__":
+def main():
     sys.exit(run(get_parser().parse_args(sys.argv[1:])))
+
+if __name__ == "__main__":
+    main()

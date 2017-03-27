@@ -43,11 +43,10 @@ setup(
     description='Tool kits for structure variation simulation, validation, analysis, tests and ect.',
     setup_requires=['nose>=1.0'],
     # Maybe the pbtools-* should really be done in a subparser style
-    #entry_points={'console_scripts': ['ab = svkits.cli:svkits_main']},
-    scripts=[
-        'svkits/make-subreads-bam-from-fasta.py',
-        'svkits/make-subreads-bam-from-zmws.py'
-    ],
+    entry_points={'console_scripts': [
+        'make-subreads-bam-from-fasta = svkits.make_subreads_bam_from_fasta:main',
+        'make-subreads-bam-from-zmws = svkits.make_subreads_bam_from_zmws:main'
+    ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),
     tests_require=['nose'],
     long_description=_get_description(_get_local_file(_README)),

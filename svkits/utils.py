@@ -23,7 +23,7 @@ def get_movie_and_zmw_from_name(name):
 
 def get_movie2zmws_in_txt(in_txt):
     """Return movie2zmws {movie: set(zmws)} of zmws or reads in txt"""
-    movie2zmws = defaultdict(set()) #movie --> set of zmws
+    movie2zmws = defaultdict(lambda:set()) #movie --> set of zmws
     for name in open(in_txt, 'r'):
         movie, zmw = get_movie_and_zmw_from_name(name)
         movie2zmws[movie].add(zmw)
@@ -32,7 +32,7 @@ def get_movie2zmws_in_txt(in_txt):
 
 def get_movie2zmws_in_fasta(in_fasta):
     """Return movie2zmws {movie: set(zmws)} of reads in fasta"""
-    movie2zmws = defaultdict(set()) #movie --> set of zmws
+    movie2zmws = defaultdict(lambda:set()) #movie --> set of zmws
     for r in FastaReader(in_fasta):
         movie, zmw = get_movie_and_zmw_from_name(r.name)
         movie2zmws[movie].add(zmw)
@@ -63,7 +63,7 @@ def get_movie2bams_from_fofn(in_bam_fofn):
     movie.2.subreads.bam
     return {'movie': ['movie.1.subreads.bam', 'movie2.subreads.bam']}
     """
-    movie2bams = defaultdict(set())
+    movie2bams = defaultdict(lambda:set())
     for fn in fofn2fns(in_bam_fofn):
         movie = fn.split('/')[-1].split('.')[0]
         print "movie=%s" % movie
@@ -92,7 +92,6 @@ def bamsieve_zmw_subreads_cmd(in_subreads_bam, zmws, out_prefix):
     out_prefix -- output prefix
     Return output (cmd, bam)
     """
-    assert isinstance(zmws, list)
     wl = ','.join([str(r) for r in list(zmws)])
     out_bam = out_prefix + '.' + op.basename(in_subreads_bam) + ".subset.out.bam"
     cmd = "bamSieve {in_subreads_bam} {out_bam} --whitelist {wl}".format(in_subreads_bam=in_subreads_bam, out_bam=out_bam, wl=wl)
@@ -106,11 +105,11 @@ def bamsieve_zmw_subreads_cmds(bam2zmws, out_prefix):
     return cmds, out_bams
     """
     cmds, out_bams = [], []
-    for in_bam, zmws in bam2zmws:
+    for in_bam, zmws in bam2zmws.iteritems():
         cmd, out_bam = bamsieve_zmw_subreads_cmd(in_bam, zmws, out_prefix)
         cmds.append(cmd)
         out_bams.append(out_bam)
-    return cmds, out_bams
+    return (cmds, out_bams)
 
 
 def get_bam2zmws(movie2zmws, movie2bams):
@@ -133,9 +132,9 @@ def get_bam2zmws(movie2zmws, movie2bams):
 
 def execute_cmds(cmds, dry_run):
     """Execute cmds if not dry_run, otherwise,print cmds"""
-    print 'CMDs:\n%r\n' % ('\n'.join(cmds))
-    if not dry_run:
-        for cmd in cmd:
+    for cmd in cmds:
+        print cmd
+        if not dry_run:
             execute(cmd)
 
 def make_subreads_bam(movie2zmws, movie2bams, out_prefix, dry_run=False):
@@ -163,14 +162,15 @@ def make_subreads_bam(movie2zmws, movie2bams, out_prefix, dry_run=False):
     cmds = [c0, c1] + _cmds + [c2, c3, c4]
 
     for fn in out_bams:
-        cmds.extend([rmpath(fn), rmpath(fn+'.pbi')])
+        cmds.extend([rmpath_cmd(fn), rmpath_cmd(fn+'.pbi')])
 
     execute_cmds(cmds=cmds, dry_run=dry_run)
 
-    if not op.exists(out_xml):
-        raise ValueError("%s does not exist" % out_xml)
-    if not op.exists(out_bam):
-        raise ValueError("%s does not exist" % out_bam)
+    if not dry_run:
+        if not op.exists(out_xml):
+            raise ValueError("%s does not exist" % out_xml)
+        if not op.exists(out_bam):
+            raise ValueError("%s does not exist" % out_bam)
 
 
 EXTENS = ['.subreadset.xml', '.subreads.bam', '.xml', '.bam', '.fasta', '.fa']

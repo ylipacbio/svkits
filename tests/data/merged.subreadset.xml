@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubreadSet CreatedAt="2017-03-13T21:09:23" MetaType="PacBio.DataSet.SubreadSet" Name="128_CL AND LER0_072916 AND LER0_072916 AND Applications_090916_54086 AND appslab_20160820_Coriell AND appslab_20160818_Coriell_Ecoli AND appslab_20160817_Coriell_batch3 AND Applications_090916_54026 AND Applications_090916_54026" Tags="subreadset" TimeStampedName="pacbio_dataset_subreadset-170313_210923407" UniqueId="62755236-1d20-f1ff-0190-0ec3beee1675" Version="3.0.1" xmlns="http://pacificbiosciences.com/PacBioDatasets.xsd" xmlns:ns4="http://pacificbiosciences.com/PacBioReagentKit.xsd" xmlns:pbbase="http://pacificbiosciences.com/PacBioBaseDataModel.xsd" xmlns:pbmeta="http://pacificbiosciences.com/PacBioCollectionMetadata.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+	<pbbase:ExternalResources>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160803_230102455" UniqueId="4fbf2bba-bd87-4b44-bc0d-a80736eb41b6" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_230102455" UniqueId="2314e94d-273a-4a7b-9451-75e11cbfb834" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160803_230102455" UniqueId="fe97da0c-d276-4e6e-a44c-76ade22ca189" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_230102455" UniqueId="3d58b8fd-e790-4667-b3d1-b09da0768830" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160803_230102455" UniqueId="fcb8ef40-01a0-4e79-8486-0b7c70ae707f" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160803_154329334" UniqueId="1a70e604-0e82-4d7a-9fa6-ebc56476aac9" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_154329334" UniqueId="6811f1f0-d632-45c6-ad76-aa409ea7cc53" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160803_154329334" UniqueId="deb8187e-82ab-4dba-af19-40a10b526c70" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_154329334" UniqueId="23b28f31-43b3-4e1f-be42-db0896fb74a7" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160803_154329334" UniqueId="178ab49e-694d-43db-b016-f0d657ab71c1" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160731_060803685" UniqueId="b8b3aef3-f836-4ae3-b714-538af54c0a07" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160731_060803685" UniqueId="356b6566-39ad-4a9a-87db-1aa91f5d0d82" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160731_060803685" UniqueId="a5d04028-0016-4d1b-94f7-16028fc700d4" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160731_060803685" UniqueId="9928c3b3-0216-4dee-927d-780fda793ccb" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160731_060803685" UniqueId="4f8fa9c1-990c-44d5-9c6b-94bc5e17dfd9" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160730_224958800" UniqueId="339ca65f-2cfb-4d11-8944-b1f3f15dcaeb" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160730_224958800" UniqueId="050cd718-2cae-48f9-a402-8654297c67ae" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160730_224958800" UniqueId="ab3294ac-4f8b-483c-820f-9b10ee66f851" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160730_224958800" UniqueId="4e86d8de-c269-45ff-a617-d1336dcd1db7" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160730_224958800" UniqueId="f9236081-6d12-4795-8707-d62769977c3c" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160910_153141822" UniqueId="f0fa1d13-9337-4518-a642-60e44611c4a9" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_153141822" UniqueId="6bca5f5b-2cf6-4d25-a60a-0d6bfa7f36fc" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160910_153141822" UniqueId="6d187b11-454a-4cc0-a01f-6da6f5cd6822" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_153141822" UniqueId="9d43c998-ff51-458f-a9ae-1bdb98e43322" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160910_153141822" UniqueId="af116f16-f37f-465b-8d1e-4d918352c8ec" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160821_065714833" UniqueId="8d13c716-7ef0-4bcd-b820-ae3a71fd6136" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160821_065714833" UniqueId="bf3ca5bd-1d89-414c-9bac-63388fec3655" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160821_065714833" UniqueId="037dae81-92a8-408f-9992-2f20cf87c876" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160821_065714833" UniqueId="fdf85e26-69de-4218-acf2-6227d3b16fb3" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160821_065714833" UniqueId="5fa4f06d-f45d-42a5-bdd1-b6d648271f50" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160819_155930242" UniqueId="78b5e30a-bd8f-4f1b-8aef-c0414204f76e" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160819_155930242" UniqueId="c5513c2c-60bd-4948-9302-933ea98a6ea0" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160819_155930242" UniqueId="04573e0f-99ca-40df-bd40-6ace21a845c9" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160819_155930242" UniqueId="af76ddf2-e4c7-4bd5-aeda-abe51d0e1198" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160819_155930242" UniqueId="cba7b271-49a5-4181-8c45-b6296b0c5c7a" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160818_090841378" UniqueId="a3320cff-9178-4abc-840e-35de79712055" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160818_090841378" UniqueId="ae4cbf5d-afcc-48a4-b27e-720943cac2a4" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160818_090841378" UniqueId="579e0795-019a-4f54-a5d8-ee01743f2ef6" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160818_090841378" UniqueId="fbfd7141-ee13-4437-9c4c-cabac7019ffd" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160818_090841378" UniqueId="d7205793-fc2c-4bb5-8845-84ffcc368b9d" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160911_054932254" UniqueId="99966b6e-db9c-4a55-9e85-2d5b483baee6" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160911_054932254" UniqueId="f405bb0e-39fe-4ea3-a42a-186618af2608" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160911_054932254" UniqueId="9fd1cdb8-d304-45a9-be53-21fed81db3a4" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160911_054932254" UniqueId="4dff94f8-2d54-4b25-bc10-5449788ab8b4" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160911_054932254" UniqueId="449ee613-f8c6-4620-a3d3-803d21f5a937" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+		<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160910_151347753" UniqueId="d36bde0b-a4d3-441f-8e0e-74749f303f17" Version="3.0.1">
+			<pbbase:FileIndices>
+				<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_151347753" UniqueId="446d112b-e82c-493e-a463-95484eb210ee" Version="3.0.1"/>
+			</pbbase:FileIndices>
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160910_151347753" UniqueId="36a607f5-8d6a-4c78-a788-e80bf2373a73" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_151347753" UniqueId="ef375411-6a89-4ee0-9f1b-be418d4e0006" Version="3.0.1"/>
+					</pbbase:FileIndices>
+				</pbbase:ExternalResource>
+				<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160910_151347753" UniqueId="920f41b6-72da-492c-878a-6a7760f700c6" Version="3.0.1"/>
+			</pbbase:ExternalResources>
+		</pbbase:ExternalResource>
+	</pbbase:ExternalResources>
+	<DataSets>
+		<SubreadSet CreatedAt="2016-08-03T23:01:02Z" MetaType="PacBio.DataSet.SubreadSet" Name="128_CL" Tags="subreadset" TimeStampedName="SubreadSetCollection_160803_230102343" UniqueId="963cc980-63e9-a0a0-d7db-4b88294452b5" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160803_230102455" UniqueId="4fbf2bba-bd87-4b44-bc0d-a80736eb41b6" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_230102455" UniqueId="2314e94d-273a-4a7b-9451-75e11cbfb834" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160803_230102455" UniqueId="fe97da0c-d276-4e6e-a44c-76ade22ca189" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_230102455" UniqueId="3d58b8fd-e790-4667-b3d1-b09da0768830" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/m54026_160803_142407.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160803_230102455" UniqueId="fcb8ef40-01a0-4e79-8486-0b7c70ae707f" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>3022290856</TotalLength>
+				<NumRecords>405606</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54026_160803_142407" CreatedAt="2016-08-02T23:09:42.575Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-20-02T23:20:01.447Z" UniqueId="47d8986f-bc22-4b56-9905-8d3c6dd99a9c">
+						<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54026_20160802_232001</pbmeta:TimeStampedName>
+							<pbmeta:Name>128_CL</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-08-02T23:09:42.575Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-08-02T23:49:09.986521Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="128_3">
+							<pbmeta:WellName>C01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="2" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>2</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>2</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA018760636058310472209810" ExpirationDate="2017-02-03" LotNumber="320119" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54026_20160802_232001/3_C01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+									<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-08-03T15:43:29Z" MetaType="PacBio.DataSet.SubreadSet" Name="128_CL" Tags="subreadset" TimeStampedName="SubreadSetCollection_160803_154329243" UniqueId="74f0e156-f4ca-e961-af76-45b0f8b33a1f" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160803_154329334" UniqueId="1a70e604-0e82-4d7a-9fa6-ebc56476aac9" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_154329334" UniqueId="6811f1f0-d632-45c6-ad76-aa409ea7cc53" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160803_154329334" UniqueId="deb8187e-82ab-4dba-af19-40a10b526c70" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160803_154329334" UniqueId="23b28f31-43b3-4e1f-be42-db0896fb74a7" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/m54026_160803_070612.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160803_154329334" UniqueId="178ab49e-694d-43db-b016-f0d657ab71c1" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>2866761485</TotalLength>
+				<NumRecords>412904</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54026_160803_070612" CreatedAt="2016-08-02T23:09:42.575Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-20-02T23:20:01.447Z" UniqueId="3f06eb87-9146-4689-a0dd-570a9b04f33a">
+						<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54026_20160802_232001</pbmeta:TimeStampedName>
+							<pbmeta:Name>128_CL</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-08-02T23:09:42.575Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-08-02T23:49:09.986521Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="128_2">
+							<pbmeta:WellName>B01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>1</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA018791636058047722014290" ExpirationDate="2017-02-03" LotNumber="320119" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54026_20160802_232001/2_B01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+									<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-07-31T06:08:03Z" MetaType="PacBio.DataSet.SubreadSet" Name="LER0_072916" Tags="subreadset" TimeStampedName="SubreadSetCollection_160731_060803592" UniqueId="db564c11-d8b5-83cf-a34f-fad9bdd092b9" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160731_060803685" UniqueId="b8b3aef3-f836-4ae3-b714-538af54c0a07" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160731_060803685" UniqueId="356b6566-39ad-4a9a-87db-1aa91f5d0d82" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160731_060803685" UniqueId="a5d04028-0016-4d1b-94f7-16028fc700d4" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160731_060803685" UniqueId="9928c3b3-0216-4dee-927d-780fda793ccb" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/m54026_160730_213029.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160731_060803685" UniqueId="4f8fa9c1-990c-44d5-9c6b-94bc5e17dfd9" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>2737385149</TotalLength>
+				<NumRecords>428696</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54026_160730_213029" CreatedAt="2016-07-29T21:23:01.006Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-32-29T21:32:05.305Z" UniqueId="5ddd0540-3167-455b-b68e-245a49242d89">
+						<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54026_20160729_213205</pbmeta:TimeStampedName>
+							<pbmeta:Name>LER0_072916</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-07-29T21:23:01.006Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-07-29T23:38:03.328771Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878_2">
+							<pbmeta:WellName>D01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="3" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>3</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>3</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA018247636055110299019180" ExpirationDate="2017-02-03" LotNumber="320110" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160707100902100010617" ExpirationDate="2017-01-06" LotNumber="160707" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007542" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54026_20160729_213205/4_D01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+									<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-07-30T22:49:58Z" MetaType="PacBio.DataSet.SubreadSet" Name="LER0_072916" Tags="subreadset" TimeStampedName="SubreadSetCollection_160730_224958693" UniqueId="6bf4183f-f512-b5b8-3c67-8f4569b8e6cd" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160730_224958800" UniqueId="339ca65f-2cfb-4d11-8944-b1f3f15dcaeb" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160730_224958800" UniqueId="050cd718-2cae-48f9-a402-8654297c67ae" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160730_224958800" UniqueId="ab3294ac-4f8b-483c-820f-9b10ee66f851" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160730_224958800" UniqueId="4e86d8de-c269-45ff-a617-d1336dcd1db7" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/m54026_160730_141255.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160730_224958800" UniqueId="f9236081-6d12-4795-8707-d62769977c3c" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>3629559152</TotalLength>
+				<NumRecords>486855</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54026_160730_141255" CreatedAt="2016-07-29T21:23:01.006Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-32-29T21:32:05.305Z" UniqueId="31fa6cee-2f47-40da-9f9d-a12d74eff0f0">
+						<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54026_20160729_213205</pbmeta:TimeStampedName>
+							<pbmeta:Name>LER0_072916</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-07-29T21:23:01.006Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-07-29T23:38:03.328771Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878_1">
+							<pbmeta:WellName>C01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="2" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>2</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>2</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA018225636054847752808430" ExpirationDate="2017-02-03" LotNumber="320110" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160707100902100010617" ExpirationDate="2017-01-06" LotNumber="160707" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007542" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54026_20160729_213205/3_C01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+									<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-09-10T15:31:41Z" MetaType="PacBio.DataSet.SubreadSet" Name="Applications_090916_54086" Tags="subreadset" TimeStampedName="SubreadSetCollection_160910_153141732" UniqueId="93e7f967-13ac-1a88-a455-ec4b12a61374" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160910_153141822" UniqueId="f0fa1d13-9337-4518-a642-60e44611c4a9" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_153141822" UniqueId="6bca5f5b-2cf6-4d25-a60a-0d6bfa7f36fc" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160910_153141822" UniqueId="6d187b11-454a-4cc0-a01f-6da6f5cd6822" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_153141822" UniqueId="9d43c998-ff51-458f-a9ae-1bdb98e43322" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/m54086_160910_065354.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160910_153141822" UniqueId="af116f16-f37f-465b-8d1e-4d918352c8ec" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>2543940786</TotalLength>
+				<NumRecords>336194</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54086_160910_065354" CreatedAt="2016-09-09T22:17:54.746Z" InstrumentId="54086" InstrumentName="54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-21-09T22:21:13.080Z" UniqueId="1f4785a3-1b63-4563-bd4e-78f094c752b3">
+						<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54086_20160909_222113</pbmeta:TimeStampedName>
+							<pbmeta:Name>Applications_090916_54086</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-09-09T22:17:54.746Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-09-09T23:36:59.982697Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-09-09T22:17:54.746Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878">
+							<pbmeta:WellName>B01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-09-09T22:17:54.746Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>1</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA025681636090872343349680" ExpirationDate="2017-03-02" LotNumber="320600" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007666" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54086_20160909_222113/2_B01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+									<pbmeta:Description>SRS</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-08-21T06:57:14Z" MetaType="PacBio.DataSet.SubreadSet" Name="appslab_20160820_Coriell" Tags="subreadset" TimeStampedName="SubreadSetCollection_160821_065714747" UniqueId="8f752886-7f53-e38a-85fd-e777a6d407c9" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160821_065714833" UniqueId="8d13c716-7ef0-4bcd-b820-ae3a71fd6136" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160821_065714833" UniqueId="bf3ca5bd-1d89-414c-9bac-63388fec3655" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160821_065714833" UniqueId="037dae81-92a8-408f-9992-2f20cf87c876" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160821_065714833" UniqueId="fdf85e26-69de-4218-acf2-6227d3b16fb3" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/m54086_160820_222043.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160821_065714833" UniqueId="5fa4f06d-f45d-42a5-bdd1-b6d648271f50" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>4458628614</TotalLength>
+				<NumRecords>662321</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54086_160820_222043" CreatedAt="2016-08-20T21:25:45.082Z" InstrumentId="54086" InstrumentName="SQ54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-16-20T22:16:58.539Z" UniqueId="7d091410-5db4-46f1-a37f-0b54ccae1a2e">
+						<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54086_20160820_221658</pbmeta:TimeStampedName>
+							<pbmeta:Name>appslab_20160820_Coriell</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-08-20T21:25:45.082Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-08-20T22:20:42.391966Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-08-20T21:25:45.082Z" ModifiedAt="0001-01-01T00:00:00" Name="appslab_20160820_B3_2">
+							<pbmeta:WellName>A01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-08-20T21:25:45.082Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="0" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>0</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>0</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA016405636073284431326960" ExpirationDate="2017-01-12" LotNumber="320307" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="007707100259100022817" ExpirationDate="2017-02-28" LotNumber="007707" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="007033100619300072316" ExpirationDate="2016-07-23" LotNumber="007033" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54086_20160820_221658/1_A01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+									<pbmeta:Description>SRS</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-08-19T15:59:30Z" MetaType="PacBio.DataSet.SubreadSet" Name="appslab_20160818_Coriell_Ecoli" Tags="subreadset" TimeStampedName="SubreadSetCollection_160819_155930158" UniqueId="46296c1f-053f-963b-5882-484b8d94aee1" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160819_155930242" UniqueId="78b5e30a-bd8f-4f1b-8aef-c0414204f76e" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160819_155930242" UniqueId="c5513c2c-60bd-4948-9302-933ea98a6ea0" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160819_155930242" UniqueId="04573e0f-99ca-40df-bd40-6ace21a845c9" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160819_155930242" UniqueId="af76ddf2-e4c7-4bd5-aeda-abe51d0e1198" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/m54086_160819_072141.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160819_155930242" UniqueId="cba7b271-49a5-4181-8c45-b6296b0c5c7a" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>3686433260</TotalLength>
+				<NumRecords>476828</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54086_160819_072141" CreatedAt="2016-08-18T22:45:43.779Z" InstrumentId="54086" InstrumentName="SQ54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-18-18T23:18:17.312Z" UniqueId="ed57ba2c-fa49-4de1-bfea-1dff1a87edd9">
+						<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54086_20160818_231817</pbmeta:TimeStampedName>
+							<pbmeta:Name>appslab_20160818_Coriell_Ecoli</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-08-18T22:45:43.779Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-08-19T00:04:59.188215Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-08-18T22:45:43.779Z" ModifiedAt="0001-01-01T00:00:00" Name="appslab_20160818_Coriell_batch3_1_15to1">
+							<pbmeta:WellName>B01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-08-18T22:45:43.779Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>1</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA016336636071881012192970" ExpirationDate="2017-01-12" LotNumber="320307" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="007707100259100022817" ExpirationDate="2017-02-28" LotNumber="007707" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="007033100619300072316" ExpirationDate="2016-07-23" LotNumber="007033" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54086_20160818_231817/2_B01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+									<pbmeta:Description>SRS</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-08-18T09:08:41Z" MetaType="PacBio.DataSet.SubreadSet" Name="appslab_20160817_Coriell_batch3" Tags="subreadset" TimeStampedName="SubreadSetCollection_160818_090841272" UniqueId="4f261d97-d795-bf73-878a-34890db7629f" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160818_090841378" UniqueId="a3320cff-9178-4abc-840e-35de79712055" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160818_090841378" UniqueId="ae4cbf5d-afcc-48a4-b27e-720943cac2a4" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160818_090841378" UniqueId="579e0795-019a-4f54-a5d8-ee01743f2ef6" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160818_090841378" UniqueId="fbfd7141-ee13-4437-9c4c-cabac7019ffd" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/m54086_160818_003055.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160818_090841378" UniqueId="d7205793-fc2c-4bb5-8845-84ffcc368b9d" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>2755761336</TotalLength>
+				<NumRecords>386378</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54086_160818_003055" CreatedAt="2016-08-17T17:07:30.426Z" InstrumentId="54086" InstrumentName="SQ54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-10-17T17:10:40.142Z" UniqueId="89237748-e215-40b8-b659-8a39104875f9">
+						<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54086_20160817_171040</pbmeta:TimeStampedName>
+							<pbmeta:Name>appslab_20160817_Coriell_batch3</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-08-17T17:07:30.426Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-08-17T17:14:34.985883Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-08-17T17:07:30.426Z" Description="660pMP" ModifiedAt="0001-01-01T00:00:00" Name="appslab_20160817_15to1">
+							<pbmeta:WellName>B01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-08-17T17:07:30.426Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter CreatedAt="2016-08-17T17:07:30.426Z" ModifiedAt="0001-01-01T00:00:00" Name="ImmobilizationTime" SimpleValue="120" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>1</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA026314636070770553037670" ExpirationDate="2017-03-14" LotNumber="320501" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="007707100259100022817" ExpirationDate="2017-02-28" LotNumber="007707" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="007033100619300072316" ExpirationDate="2016-07-23" LotNumber="007033" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54086_20160817_171040/2_B01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+									<pbmeta:Description>SRS</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-09-11T05:49:32Z" MetaType="PacBio.DataSet.SubreadSet" Name="Applications_090916_54026" Tags="subreadset" TimeStampedName="SubreadSetCollection_160911_054932161" UniqueId="839a6d8d-fbdd-3811-f931-e4052c005a29" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160911_054932254" UniqueId="99966b6e-db9c-4a55-9e85-2d5b483baee6" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160911_054932254" UniqueId="f405bb0e-39fe-4ea3-a42a-186618af2608" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160911_054932254" UniqueId="9fd1cdb8-d304-45a9-be53-21fed81db3a4" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160911_054932254" UniqueId="4dff94f8-2d54-4b25-bc10-5449788ab8b4" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/m54026_160910_211228.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160911_054932254" UniqueId="449ee613-f8c6-4620-a3d3-803d21f5a937" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>3369062268</TotalLength>
+				<NumRecords>415188</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54026_160910_211228" CreatedAt="2016-09-09T22:24:47.716Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-27-09T22:27:08.271Z" UniqueId="dfb2c1c0-7a01-4fa5-bcde-71806875e059">
+						<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54026_20160909_222708</pbmeta:TimeStampedName>
+							<pbmeta:Name>Applications_090916_54026</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-09-09T22:24:47.716Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-09-09T23:20:21.401813Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878">
+							<pbmeta:WellName>D01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="3" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>3</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>3</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA025669636091387486038910" ExpirationDate="2017-03-02" LotNumber="320600" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007666" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54026_20160909_222708/4_D01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+									<pbmeta:Description>SRS ofSQ54026</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+		<SubreadSet CreatedAt="2016-09-10T15:13:47Z" MetaType="PacBio.DataSet.SubreadSet" Name="Applications_090916_54026" Tags="subreadset" TimeStampedName="SubreadSetCollection_160910_151347646" UniqueId="7f63af9a-cd64-e5b3-627d-40d796dd884c" Version="3.0.1" xsi:schemaLocation="http://pacificbiosciences.com/PacBioDataModel.xsd">
+			<pbbase:ExternalResources>
+				<pbbase:ExternalResource Description="Points to the subreads bam file." MetaType="PacBio.SubreadFile.SubreadBamFile" Name="subreads bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.subreads.bam" TimeStampedName="pacbio_subreadfile_subreadbamfile-160910_151347753" UniqueId="d36bde0b-a4d3-441f-8e0e-74749f303f17" Version="3.0.1">
+					<pbbase:FileIndices>
+						<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.subreads.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_151347753" UniqueId="446d112b-e82c-493e-a463-95484eb210ee" Version="3.0.1"/>
+					</pbbase:FileIndices>
+					<pbbase:ExternalResources>
+						<pbbase:ExternalResource Description="Points to the scraps bam file." MetaType="PacBio.SubreadFile.ScrapsBamFile" Name="scraps bam" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.scraps.bam" TimeStampedName="pacbio_subreadfile_scrapsbamfile-160910_151347753" UniqueId="36a607f5-8d6a-4c78-a788-e80bf2373a73" Version="3.0.1">
+							<pbbase:FileIndices>
+								<pbbase:FileIndex MetaType="PacBio.Index.PacBioIndex" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.scraps.bam.pbi" TimeStampedName="pacbio_index_pacbioindex-160910_151347753" UniqueId="ef375411-6a89-4ee0-9f1b-be418d4e0006" Version="3.0.1"/>
+							</pbbase:FileIndices>
+						</pbbase:ExternalResource>
+						<pbbase:ExternalResource Description="Points to the summary sts.xml file." MetaType="PacBio.SubreadFile.ChipStatsFile" Name="Chipstats XML" ResourceId="/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/m54026_160910_063658.sts.xml" TimeStampedName="pacbio_subreadfile_chipstatsfile-160910_151347753" UniqueId="920f41b6-72da-492c-878a-6a7760f700c6" Version="3.0.1"/>
+					</pbbase:ExternalResources>
+				</pbbase:ExternalResource>
+			</pbbase:ExternalResources>
+			<DataSetMetadata>
+				<TotalLength>3700140844</TotalLength>
+				<NumRecords>461029</NumRecords>
+				<pbmeta:Collections>
+					<pbmeta:CollectionMetadata Context="m54026_160910_063658" CreatedAt="2016-09-09T22:24:47.716Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-27-09T22:27:08.271Z" UniqueId="4c6c8dbb-15ee-4d00-9d12-d8aa1d2b0cb0">
+						<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+						<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+						<pbmeta:RunDetails>
+							<pbmeta:TimeStampedName>r54026_20160909_222708</pbmeta:TimeStampedName>
+							<pbmeta:Name>Applications_090916_54026</pbmeta:Name>
+							<pbmeta:WhenCreated>2016-09-09T22:24:47.716Z</pbmeta:WhenCreated>
+							<pbmeta:WhenStarted>2016-09-09T23:20:21.401813Z</pbmeta:WhenStarted>
+						</pbmeta:RunDetails>
+						<pbmeta:WellSample CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878">
+							<pbmeta:WellName>B01</pbmeta:WellName>
+							<pbmeta:Concentration>0.0</pbmeta:Concentration>
+							<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+							<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+							<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+							<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+							<pbmeta:UseCount>0</pbmeta:UseCount>
+						</pbmeta:WellSample>
+						<pbmeta:Automation Name="Workflow_Magbead.py">
+							<pbbase:AutomationParameters>
+								<pbbase:AutomationParameter CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+								<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+								<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+								<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+							</pbbase:AutomationParameters>
+						</pbmeta:Automation>
+						<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+						<pbmeta:CellIndex>1</pbmeta:CellIndex>
+						<pbmeta:CellPac Barcode="BA025684636090862186025310" ExpirationDate="2017-03-02" LotNumber="320600" PartNumber="100-513-100"/>
+						<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+							<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+							<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+						</pbmeta:TemplatePrepKit>
+						<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+						<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+							<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+							<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007666" PartNumber="100-619-600"/>
+						</pbmeta:SequencingKitPlate>
+						<pbmeta:Primary>
+							<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+							<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+							<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+							<pbmeta:OutputOptions>
+								<pbmeta:ResultsFolder>r54026_20160909_222708/2_B01/</pbmeta:ResultsFolder>
+								<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/</pbmeta:CollectionPathUri>
+								<pbmeta:CopyFiles>
+									<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+									<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+								</pbmeta:CopyFiles>
+								<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+								<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+								<pbmeta:TransferResource>
+									<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+									<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+									<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+									<pbmeta:Description>SRS ofSQ54026</pbmeta:Description>
+									<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+								</pbmeta:TransferResource>
+							</pbmeta:OutputOptions>
+						</pbmeta:Primary>
+						<pbmeta:Secondary>
+							<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+							<pbmeta:AutomationParameters>
+								<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+							</pbmeta:AutomationParameters>
+							<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+						</pbmeta:Secondary>
+						<pbmeta:UserDefinedFields>
+							<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+						</pbmeta:UserDefinedFields>
+					</pbmeta:CollectionMetadata>
+				</pbmeta:Collections>
+			</DataSetMetadata>
+		</SubreadSet>
+	</DataSets>
+	<DataSetMetadata>
+		<TotalLength>32769955557</TotalLength>
+		<NumRecords>4471997</NumRecords>
+		<pbmeta:Collections>
+			<pbmeta:CollectionMetadata Context="m54026_160803_142407" CreatedAt="2016-08-02T23:09:42.575Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-20-02T23:20:01.447Z" UniqueId="47d8986f-bc22-4b56-9905-8d3c6dd99a9c">
+				<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54026_20160802_232001</pbmeta:TimeStampedName>
+					<pbmeta:Name>128_CL</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-08-02T23:09:42.575Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-08-02T23:49:09.986521Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="128_3">
+					<pbmeta:WellName>C01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="2" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>2</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>2</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA018760636058310472209810" ExpirationDate="2017-02-03" LotNumber="320119" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54026_20160802_232001/3_C01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160802_232001/3_C01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+							<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54026_160803_070612" CreatedAt="2016-08-02T23:09:42.575Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-20-02T23:20:01.447Z" UniqueId="3f06eb87-9146-4689-a0dd-570a9b04f33a">
+				<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54026_20160802_232001</pbmeta:TimeStampedName>
+					<pbmeta:Name>128_CL</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-08-02T23:09:42.575Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-08-02T23:49:09.986521Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="128_2">
+					<pbmeta:WellName>B01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-08-02T23:09:42.575Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>1</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA018791636058047722014290" ExpirationDate="2017-02-03" LotNumber="320119" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54026_20160802_232001/2_B01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160802_232001/2_B01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+							<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54026_160730_213029" CreatedAt="2016-07-29T21:23:01.006Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-32-29T21:32:05.305Z" UniqueId="5ddd0540-3167-455b-b68e-245a49242d89">
+				<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54026_20160729_213205</pbmeta:TimeStampedName>
+					<pbmeta:Name>LER0_072916</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-07-29T21:23:01.006Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-07-29T23:38:03.328771Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878_2">
+					<pbmeta:WellName>D01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="3" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>3</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>3</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA018247636055110299019180" ExpirationDate="2017-02-03" LotNumber="320110" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160707100902100010617" ExpirationDate="2017-01-06" LotNumber="160707" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007542" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54026_20160729_213205/4_D01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160729_213205/4_D01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+							<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54026_160730_141255" CreatedAt="2016-07-29T21:23:01.006Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-32-29T21:32:05.305Z" UniqueId="31fa6cee-2f47-40da-9f9d-a12d74eff0f0">
+				<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54026_20160729_213205</pbmeta:TimeStampedName>
+					<pbmeta:Name>LER0_072916</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-07-29T21:23:01.006Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-07-29T23:38:03.328771Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878_1">
+					<pbmeta:WellName>C01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-07-29T21:23:01.006Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="2" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>2</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>2</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA018225636054847752808430" ExpirationDate="2017-02-03" LotNumber="320110" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160707100902100010617" ExpirationDate="2017-01-06" LotNumber="160707" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007542" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54026_20160729_213205/3_C01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160729_213205/3_C01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-scheme-1</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>Transfer SRS scheme name</pbmeta:Name>
+							<pbmeta:Description>Description of SRS (Rsync+SSH) Transfer SRS scheme name with destPath /mnt/appslab/lims/smrt_data</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54086_160910_065354" CreatedAt="2016-09-09T22:17:54.746Z" InstrumentId="54086" InstrumentName="54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-21-09T22:21:13.080Z" UniqueId="1f4785a3-1b63-4563-bd4e-78f094c752b3">
+				<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54086_20160909_222113</pbmeta:TimeStampedName>
+					<pbmeta:Name>Applications_090916_54086</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-09-09T22:17:54.746Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-09-09T23:36:59.982697Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-09-09T22:17:54.746Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878">
+					<pbmeta:WellName>B01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-09-09T22:17:54.746Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>1</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA025681636090872343349680" ExpirationDate="2017-03-02" LotNumber="320600" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007666" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54086_20160909_222113/2_B01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160909_222113/2_B01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+							<pbmeta:Description>SRS</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54086_160820_222043" CreatedAt="2016-08-20T21:25:45.082Z" InstrumentId="54086" InstrumentName="SQ54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-16-20T22:16:58.539Z" UniqueId="7d091410-5db4-46f1-a37f-0b54ccae1a2e">
+				<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54086_20160820_221658</pbmeta:TimeStampedName>
+					<pbmeta:Name>appslab_20160820_Coriell</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-08-20T21:25:45.082Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-08-20T22:20:42.391966Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-08-20T21:25:45.082Z" ModifiedAt="0001-01-01T00:00:00" Name="appslab_20160820_B3_2">
+					<pbmeta:WellName>A01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-08-20T21:25:45.082Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="0" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>0</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>0</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA016405636073284431326960" ExpirationDate="2017-01-12" LotNumber="320307" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="007707100259100022817" ExpirationDate="2017-02-28" LotNumber="007707" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="007033100619300072316" ExpirationDate="2016-07-23" LotNumber="007033" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54086_20160820_221658/1_A01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160820_221658/1_A01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+							<pbmeta:Description>SRS</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54086_160819_072141" CreatedAt="2016-08-18T22:45:43.779Z" InstrumentId="54086" InstrumentName="SQ54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-18-18T23:18:17.312Z" UniqueId="ed57ba2c-fa49-4de1-bfea-1dff1a87edd9">
+				<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54086_20160818_231817</pbmeta:TimeStampedName>
+					<pbmeta:Name>appslab_20160818_Coriell_Ecoli</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-08-18T22:45:43.779Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-08-19T00:04:59.188215Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-08-18T22:45:43.779Z" ModifiedAt="0001-01-01T00:00:00" Name="appslab_20160818_Coriell_batch3_1_15to1">
+					<pbmeta:WellName>B01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-08-18T22:45:43.779Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>1</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA016336636071881012192970" ExpirationDate="2017-01-12" LotNumber="320307" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="007707100259100022817" ExpirationDate="2017-02-28" LotNumber="007707" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="007033100619300072316" ExpirationDate="2016-07-23" LotNumber="007033" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54086_20160818_231817/2_B01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160818_231817/2_B01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+							<pbmeta:Description>SRS</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54086_160818_003055" CreatedAt="2016-08-17T17:07:30.426Z" InstrumentId="54086" InstrumentName="SQ54086" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54086-CollectionMetadata-2016-10-17T17:10:40.142Z" UniqueId="89237748-e215-40b8-b659-8a39104875f9">
+				<pbmeta:InstCtrlVer>3.1.1.183540</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54086_20160817_171040</pbmeta:TimeStampedName>
+					<pbmeta:Name>appslab_20160817_Coriell_batch3</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-08-17T17:07:30.426Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-08-17T17:14:34.985883Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-08-17T17:07:30.426Z" Description="660pMP" ModifiedAt="0001-01-01T00:00:00" Name="appslab_20160817_15to1">
+					<pbmeta:WellName>B01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-08-17T17:07:30.426Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter CreatedAt="2016-08-17T17:07:30.426Z" ModifiedAt="0001-01-01T00:00:00" Name="ImmobilizationTime" SimpleValue="120" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>1</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA026314636070770553037670" ExpirationDate="2017-03-14" LotNumber="320501" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="007707100259100022817" ExpirationDate="2017-02-28" LotNumber="007707" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="007033100619300072316" ExpirationDate="2016-07-23" LotNumber="007033" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-02-28" LotNumber="007045" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54086_20160817_171040/2_B01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54086_20160817_171040/2_B01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+							<pbmeta:Description>SRS</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54026_160910_211228" CreatedAt="2016-09-09T22:24:47.716Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-27-09T22:27:08.271Z" UniqueId="dfb2c1c0-7a01-4fa5-bcde-71806875e059">
+				<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54026_20160909_222708</pbmeta:TimeStampedName>
+					<pbmeta:Name>Applications_090916_54026</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-09-09T22:24:47.716Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-09-09T23:20:21.401813Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878">
+					<pbmeta:WellName>D01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="3" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>3</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>3</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA025669636091387486038910" ExpirationDate="2017-03-02" LotNumber="320600" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007666" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54026_20160909_222708/4_D01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160909_222708/4_D01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+							<pbmeta:Description>SRS ofSQ54026</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+			<pbmeta:CollectionMetadata Context="m54026_160910_063658" CreatedAt="2016-09-09T22:24:47.716Z" InstrumentId="54026" InstrumentName="54026" MetaType="CollectionMetadata" ModifiedAt="0001-01-01T00:00:00" Status="Ready" TimeStampedName="54026-CollectionMetadata-2016-27-09T22:27:08.271Z" UniqueId="4c6c8dbb-15ee-4d00-9d12-d8aa1d2b0cb0">
+				<pbmeta:InstCtrlVer>3.1.1.182545</pbmeta:InstCtrlVer>
+				<pbmeta:SigProcVer>3.1.1-182013</pbmeta:SigProcVer>
+				<pbmeta:RunDetails>
+					<pbmeta:TimeStampedName>r54026_20160909_222708</pbmeta:TimeStampedName>
+					<pbmeta:Name>Applications_090916_54026</pbmeta:Name>
+					<pbmeta:WhenCreated>2016-09-09T22:24:47.716Z</pbmeta:WhenCreated>
+					<pbmeta:WhenStarted>2016-09-09T23:20:21.401813Z</pbmeta:WhenStarted>
+				</pbmeta:RunDetails>
+				<pbmeta:WellSample CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="NA12878">
+					<pbmeta:WellName>B01</pbmeta:WellName>
+					<pbmeta:Concentration>0.0</pbmeta:Concentration>
+					<pbmeta:InsertSize>20000</pbmeta:InsertSize>
+					<pbmeta:SampleReuseEnabled>false</pbmeta:SampleReuseEnabled>
+					<pbmeta:StageHotstartEnabled>false</pbmeta:StageHotstartEnabled>
+					<pbmeta:SizeSelectionEnabled>false</pbmeta:SizeSelectionEnabled>
+					<pbmeta:UseCount>0</pbmeta:UseCount>
+				</pbmeta:WellSample>
+				<pbmeta:Automation Name="Workflow_Magbead.py">
+					<pbbase:AutomationParameters>
+						<pbbase:AutomationParameter CreatedAt="2016-09-09T22:24:47.716Z" ModifiedAt="0001-01-01T00:00:00" Name="MovieLength" SimpleValue="360" ValueDataType="Double"/>
+						<pbbase:AutomationParameter Name="CollectionNumber" SimpleValue="1" ValueDataType="Int32"/>
+						<pbbase:AutomationParameter Name="UseStageHotStart" SimpleValue="False" ValueDataType="String"/>
+						<pbbase:AutomationParameter Name="InsertSize" SimpleValue="20000" ValueDataType="Int32"/>
+					</pbbase:AutomationParameters>
+				</pbmeta:Automation>
+				<pbmeta:CollectionNumber>1</pbmeta:CollectionNumber>
+				<pbmeta:CellIndex>1</pbmeta:CellIndex>
+				<pbmeta:CellPac Barcode="BA025684636090862186025310" ExpirationDate="2017-03-02" LotNumber="320600" PartNumber="100-513-100"/>
+				<pbmeta:TemplatePrepKit Barcode="DM1117100259100111716" ExpirationDate="2016-11-17" LotNumber="DM1117" MaxInsertSize="20000" MinInsertSize="500" Name="SMRTbell™ Template Prep Kit" PartNumber="100-259-100">
+					<pbbase:LeftAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:LeftAdaptorSequence>
+					<pbbase:RightAdaptorSequence>ATCTCTCTCAACAACAACAACGGAGGAGGAGGAAAAGAGAGAGAT</pbbase:RightAdaptorSequence>
+				</pbmeta:TemplatePrepKit>
+				<pbmeta:BindingKit Barcode="DM1117100619300111716" ExpirationDate="2016-11-17" LotNumber="DM1117" Name="Sequel™ Binding Kit 1.0" PartNumber="100-619-300"/>
+				<pbmeta:SequencingKitPlate Barcode="160727100902100012617" ExpirationDate="2017-01-26" LotNumber="160727" Name="Sequel™ Sequencing Plate 1.2" PartNumber="100-902-100">
+					<ns4:ReagentTubes ExpirationDate="2018-07-25" LotNumber="107053" PartNumber="100-619-700"/>
+					<ns4:ReagentTubes ExpirationDate="2020-05-31" LotNumber="007666" PartNumber="100-619-600"/>
+				</pbmeta:SequencingKitPlate>
+				<pbmeta:Primary>
+					<pbmeta:AutomationName>SequelAlpha</pbmeta:AutomationName>
+					<pbmeta:ConfigFileName>SqlPoC_SubCrf_2C2A-t2.xml</pbmeta:ConfigFileName>
+					<pbmeta:SequencingCondition>DefaultPrimarySequencingCondition</pbmeta:SequencingCondition>
+					<pbmeta:OutputOptions>
+						<pbmeta:ResultsFolder>r54026_20160909_222708/2_B01/</pbmeta:ResultsFolder>
+						<pbmeta:CollectionPathUri>/mnt/appslab/lims/smrt_data/r54026_20160909_222708/2_B01/</pbmeta:CollectionPathUri>
+						<pbmeta:CopyFiles>
+							<pbmeta:CollectionFileCopy>Fasta</pbmeta:CollectionFileCopy>
+							<pbmeta:CollectionFileCopy>Bam</pbmeta:CollectionFileCopy>
+						</pbmeta:CopyFiles>
+						<pbmeta:Readout>Bases_Without_QVs</pbmeta:Readout>
+						<pbmeta:MetricsVerbosity>Minimal</pbmeta:MetricsVerbosity>
+						<pbmeta:TransferResource>
+							<pbmeta:Id>srs-pbi-collections</pbmeta:Id>
+							<pbmeta:TransferScheme>SRS</pbmeta:TransferScheme>
+							<pbmeta:Name>srs-pbi-collections</pbmeta:Name>
+							<pbmeta:Description>SRS ofSQ54026</pbmeta:Description>
+							<pbmeta:DestPath>/mnt/appslab/lims/smrt_data</pbmeta:DestPath>
+						</pbmeta:TransferResource>
+					</pbmeta:OutputOptions>
+				</pbmeta:Primary>
+				<pbmeta:Secondary>
+					<pbmeta:AutomationName>DefaultSecondaryAutomationName</pbmeta:AutomationName>
+					<pbmeta:AutomationParameters>
+						<pbmeta:AutomationParameter CreatedAt="0001-01-01T00:00:00" ModifiedAt="0001-01-01T00:00:00" Name="Reference" SimpleValue="DefaultSecondaryAnalysisReferenceName" ValueDataType="String"/>
+					</pbmeta:AutomationParameters>
+					<pbmeta:CellCountInJob>0</pbmeta:CellCountInJob>
+				</pbmeta:Secondary>
+				<pbmeta:UserDefinedFields>
+					<pbbase:DataEntities Name=" LIMS_IMPORT " SimpleValue="DefaultUserDefinedFieldLIMS" ValueDataType="String"/>
+				</pbmeta:UserDefinedFields>
+			</pbmeta:CollectionMetadata>
+		</pbmeta:Collections>
+	</DataSetMetadata>
+</SubreadSet>

@@ -1,4 +1,4 @@
-Test pbsv align
+Test make-subreads-bam-from-zmws
 
 Set up
   $ . $TESTDIR/setup.sh

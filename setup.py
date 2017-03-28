@@ -46,7 +46,8 @@ setup(
     entry_points={'console_scripts': [
         'make-subreads-bam-from-fasta = svkits.make_subreads_bam_from_fasta:main',
         'make-subreads-bam-from-zmws = svkits.make_subreads_bam_from_zmws:main',
-        'validate-sv-bed = svkits.validate_sv_bed:main'
+        'validate-sv-bed = svkits.validate_sv_bed:main',
+        'add-an-indel-to-fasta = svkits.add_an_indel_to_fasta:main'
     ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),
     tests_require=['nose'],

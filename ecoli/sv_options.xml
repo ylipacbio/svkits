@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pipeline-preset-template>
+    <task-options>
+        <option id="pbsv_pbsmrtpipe.task_options.svlength">
+            <value>50</value>
+        </option>
+    </task-options>
+</pipeline-preset-template>

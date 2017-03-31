@@ -8,7 +8,7 @@ Define utils used in
 from collections import defaultdict
 import os.path as op
 from pbcore.io import FastaReader
-from pbsv.functional.utils import rmpath, execute, cmds_to_bash_fn, execute_as_bash
+from pbsv.functional.utils import realpath, rmpath, execute, execute_as_bash
 
 
 def get_movie_and_zmw_from_name(name):
@@ -41,6 +41,8 @@ def get_movie2zmws_in_fasta(in_fasta):
 
 def fofn2fns(i_fofn):
     """Get filenames from fofn"""
+    if not i_fofn.endswith('.fofn'):
+        return i_fofn
     fns = []
     for fn in open(i_fofn, 'r'):
         fn = fn.strip()
@@ -74,6 +76,17 @@ def get_movie2bams_from_fofn(in_bam_fofn):
 def rmpath_cmd(path):
     """rm a file path, not directory, command"""
     return 'rm -f %s' % path
+
+def mkdir_cmd(path):
+    """mkdir -p path"""
+    return 'mkdir -p %s' % path
+
+def cmds_to_bash_fn(cmds, bash_sh_fn):
+    """Write a list of cmds to a bash sh"""
+    with open(bash_sh_fn, 'w') as writer:
+        writer.write('\n'.join(["#!/usr/bin/env bash"] + cmds))
+    execute('chmod +x %s' % realpath(bash_sh_fn))
+    return realpath(bash_sh_fn)
 
 def merge_bam2xml_cmd(in_bams, out_xml):
     """Merge bam files to xml command """

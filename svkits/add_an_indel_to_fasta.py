@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 """
-Add indels (insertions, deletions) to a reference FASTA file,
-and make BED of SV calls mapping subreads of the reference FASTA file
-to the modified FASTA.
+Add exactcly one indel (either insertion or deletion) to
+a reference FASTA file, and make BED of SV calls mapping
+subreads of the reference FASTA file to the modified FASTA.
 """
 
 import sys
@@ -38,18 +38,20 @@ the modified reference file."""
 def del_a_substr_from_seq(seq, pos, n_bases):
     """Add a deletion of n_bases starting from pos to sequence"""
     if pos < 0 or pos + n_bases > len(seq):
-        raise "Could not delete %r bases starting from pos %r in sequence of length %r" % (n_bases, pos, len(seq))
+        raise ValueError("Could not delete %r bases starting from pos %r in sequence of length %r" % (n_bases, pos, len(seq)))
     return seq[0:pos] + seq[pos+n_bases:]
 
 
-def del_a_substr_from_read(name, seq, pos, n_bases):
+def del_a_substr_from_read(name, seq, pos, n_bases, simple_name=False):
     """Delete n_bases bases starting from pos of sequence (seq) of read (name)
     return out_read, bed_record
     """
     out_seq = del_a_substr_from_seq(seq=seq, pos=pos, n_bases=n_bases)
     out_name = name + ' ' + 'ORIGINALLEN=%s;ACTION=DEL:POS=%s;SVLEN=%s;NEWLEN=%s' % (len(seq), pos, n_bases, len(out_seq))
+    if simple_name:
+        out_name = name.split(' ')[0] + ' ' + ('' if len(name.split(' ')) == 1 else name.split(' ')[1]) + ';d_%s_%s' % (pos, n_bases)
     out_read = FastaRecord(out_name, out_seq)
-    bed_record = BedRecord(chrom=name, start=pos, end=pos,
+    bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos,
                            sv_type='Insertion', sv_len=n_bases, seq=None,
                            fmt=ARTIFICIAL_FMT, annotations=None)
     return (out_read, bed_record)
@@ -65,18 +67,22 @@ def make_a_dna_str(n_bases):
 
 def add_a_str_to_seq(seq, pos, n_bases):
     """Simply add an arbitrary string of n_bases to seq at pos"""
+    assert isinstance(seq, str)
     s = make_a_dna_str(n_bases)
     out_seq = seq[0:pos] + s + seq[pos:]
     return out_seq
 
-def ins_a_str_to_read(name, seq, pos, n_bases):
+def ins_a_str_to_read(name, seq, pos, n_bases, simple_name=False):
     """Insert a random string of n_bases to pos of sequence (seq) of read (name)
     return out_read, bed_record
     """
+    assert isinstance(seq, str)
     out_seq = add_a_str_to_seq(seq=seq, pos=pos, n_bases=n_bases)
     out_name = name + ' ' + 'ORIGINALLEN=%s;ACTION=INS:POS=%s;SVLEN=%s;NEWLEN=%s' % (len(seq), pos, n_bases, len(out_seq))
+    if simple_name:
+        out_name = name.split(' ')[0] + ' ' + ('' if len(name.split(' ')) == 1 else name.split(' ')[1]) + ';i_%s_%s' % (pos, n_bases)
     out_read = FastaRecord(out_name, out_seq)
-    bed_record = BedRecord(chrom=name, start=pos, end=pos+n_bases,
+    bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos+n_bases,
                            sv_type='Deletion', sv_len=n_bases, seq=None,
                            fmt=ARTIFICIAL_FMT, annotations=None)
     return (out_read, bed_record)
@@ -88,6 +94,16 @@ def fasta_to_ordereddict(in_fasta):
     for r in FastaReader(in_fasta):
         d[r.name] = r.sequence
     return d
+
+
+def get_del_pos(seq_len, n_del_bases):
+    """Get random pos to delete n_del_bases from sequence of length seq_len"""
+    return random.randint(0, seq_len - n_del_bases)
+
+
+def get_ins_pos(seq_len):
+    return random.randint(0, seq_len)
+
 
 def run(args):
     """run main"""
@@ -102,11 +118,10 @@ def run(args):
     if apply_deletion:
         if n_bases >= len(selected_seq):
             print "Unable to delete %s bases from a sequence of length %s" % (n_bases, len(selected_seq))
-        pos = random.randint(0, len(selected_seq) - n_bases)
-        #n_bases = random.randint(0, len(selected_seq) - pos)
+        pos = get_del_pos(len(selected_seq), n_bases)
         out_read, bed_record = del_a_substr_from_read(selected_name, selected_seq, pos, n_bases)
     elif apply_insertion:
-        pos = random.randint(0, len(selected_seq))
+        pos = get_ins_pos(len(selected_seq))
         out_read, bed_record = ins_a_str_to_read(selected_name, selected_seq, pos, n_bases)
     else:
         raise ValueError("%s can either insert a string to a reference sequence or delete a substring from a referece sequence." % op.basename(__file__))

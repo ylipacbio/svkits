@@ -1,3 +1,4 @@
 data/*
 *.pyc
 svkits.egg-info
+tests/out/*

@@ -2,11 +2,12 @@
 import sys
 import os.path as op
 import logging
-from pbsv.functional.utils import mkdir, realpath, cmds_to_bash_fn, execute
+from pbsv.functional.utils import mkdir, realpath, execute
+from pbsv.io.VcfIO import BedReader
 
-from svkits.utils import execute_cmds, rmpath_cmd, mkdir_cmd
+from svkits.utils import execute_cmds, rmpath_cmd, mkdir_cmd, cmds_to_bash_fn
 
-from svkits.validate_sv_bed import all_calls, good_calls, false_postives
+from svkits.validate_sv_bed import n_all_calls, n_good_calls, n_false_postives, false_positive_calls, remove_redunant_records
 
 log = logging.getLogger(op.basename(__file__))
 
@@ -76,7 +77,7 @@ def make_pbsmrtpipe_dir(reference_fa, subreadset_xml, dry_run=False):
     reference_ds = refset_xml_of_ref_fa(reference_fa)
 
     # make pbsmrtpipe running dir
-    pbsmrtpipe_dir = op.join(fa_dir, 'pbsmrtpipe')
+    pbsmrtpipe_dir = realpath(op.join(fa_dir, 'pbsmrtpipe'))
     c0 = 'rm -rf %s' % pbsmrtpipe_dir
     c1 = mkdir_cmd(pbsmrtpipe_dir)
     # copy *.xml, Makefile to pbsmrtpipe_dir
@@ -87,32 +88,36 @@ def make_pbsmrtpipe_dir(reference_fa, subreadset_xml, dry_run=False):
     # make job.sh
     job_fn = op.join(pbsmrtpipe_dir, 'job.sh')
     job_cmd = \
+            'cwd=`pwd` && cd %s\n' % pbsmrtpipe_dir + \
             'pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_sv --debug \\\n' + \
             '-e eid_subread:%s \\\n' % subreadset_xml + \
             '-e eid_ref_dataset:%s \\\n' % reference_ds + \
             '--preset-xml=%s \\\n' % op.join(pbsmrtpipe_dir, op.basename(sv_options_xml)) + \
-            '--preset-xml=%s \n' % op.join(pbsmrtpipe_dir, op.basename(global_xml))
-
+            '--preset-xml=%s && echo $?\n' % op.join(pbsmrtpipe_dir, op.basename(global_xml)) + \
+            'cd $cwd'
     cmds_to_bash_fn([job_cmd], job_fn)
     log.info("job.sh = %s" % job_fn)
     return job_fn
 
 def pbsv_out_bed_of_ref_fa(reference_fa):
-    return op.join(op.dirname(reference_fa), 'pbsmrtpipe', 'tasks', 'pbsvtools.tasks.call', 'structural_variants.bed')
+    return op.join(op.dirname(reference_fa), 'pbsmrtpipe', 'tasks', 'pbsvtools.tasks.call-0', 'structural_variants.bed')
 
 def make_validate_sv_bed(pbsv_out_bed, truth_bed):
     """validate pbsv_out_bed against truth_bed"""
-    n_all = all_calls(out_bed=pbsv_out_bed)
-    n_good = good_calls(std_bed=truth_bed, out_bed=pbsv_out_bed)
-    n_fp = false_postives(std_bed=truth_bed, out_bed=pbsv_out_bed)
-    print (op.basename(truth_bed).split('.')[0], n_all_calls, n_good, n_fp)
+    n_all = n_all_calls(out_bed=pbsv_out_bed)
+    n_good = n_good_calls(std_bed=truth_bed, out_bed=pbsv_out_bed)
+    n_fp = n_false_postives(std_bed=truth_bed, out_bed=pbsv_out_bed)
+    id = op.basename(truth_bed).split('.')[0] # e.x.,action_delete_50_id_0truth
+    sv_type, sv_len = id.split('_')[1:3]
+    ret = [id, n_all, n_good, n_fp, sv_type, sv_len, pbsv_out_bed, truth_bed]
+    print '\t'.join([str(x) for x in ret])
+
 
 
 def run():
     actions = ['--delete', '--insert']
     sv_lens = [50, 100, 200, 500, 1000, 2000, 5000]
     times = 5
-    #sv_lens = [50]
     dry_run = False
     ecoli_fa = '/pbi/dept/secondary/siv/yli/sv/ecoli/Ecoli/genome/genome.fa'
     subreadset_xml = '/pbi/dept/secondary/siv/yli/sv/ecoli/subreads/ecoli_10X.subreadset.xml'
@@ -128,20 +133,25 @@ def run():
         return 0
 
     # make pbsmrtpipe job.sh for each modified reference, and write job.sh path to run_pbsmrtpipe_jobs.sh
-    job_sh_fns = []
-    for out_fa, truth_bed in zip(out_fa_fns, truth_bed_fns):
-        job_sh = make_pbsmrtpipe_dir(reference_fa=out_fa, subreadset_xml=subreadset_xml, dry_run=dry_run)
-        job_sh_fns.append(job_sh)
-    cmds_to_bash_fn(job_sh_fns, run_pbsmrtpipe_jobs_sh)
+    if False:
+        job_sh_fns = []
+        for out_fa, truth_bed in zip(out_fa_fns, truth_bed_fns):
+            job_sh = make_pbsmrtpipe_dir(reference_fa=out_fa, subreadset_xml=subreadset_xml, dry_run=dry_run)
+            job_sh_fns.append(job_sh)
+        cmds_to_bash_fn(job_sh_fns, run_pbsmrtpipe_jobs_sh)
+        return 0
 
     # evaluate calls done by pbsmrtpipe.sa3_ds_sv
-    job_sh_fns = []
+    headers = ['id', 'n_all_calls', 'n_good_calls', 'false_positives', 'sv_type', 'sv_len', 'pbsv_bed', 'truth_bed']
+    print '#' + '\t'.join(headers)
+    fp_set = []
     for out_fa, truth_bed in zip(out_fa_fns, truth_bed_fns):
         pbsv_out_bed = pbsv_out_bed_of_ref_fa(reference_fa=out_fa)
-        job_sh = make_validate_sv_bed(pbsv_out_bed, truth_bed)
-        job_sh_fns.append(job_sh)
-    cmds_to_bash_fn(job_sh_fns, run_validate_sv_bed_sh)
-
+        make_validate_sv_bed(pbsv_out_bed, truth_bed)
+        fp_set.extend(false_positive_calls(out_bed=pbsv_out_bed, std_bed=truth_bed))
+    uniq_set = remove_redunant_records(fp_set)
+    import pdb
+    pdb.set_trace()
     return 0
 
 if __name__ == '__main__':

@@ -1,6 +1,10 @@
+import os.path as op
 from nose.tools import assert_equal, assert_true, assert_false
-
+from collections import defaultdict
 from svkits.add_indels_to_fasta import *
+from svkits.utils import *
+
+OUT_DIR = op.join(op.dirname(__file__), "tests/out/")
 
 
 def test_weighted_choose():
@@ -25,7 +29,8 @@ def test_swap_dict_dict_k1_k2():
 def test_get_ins_poses():
     poses = get_ins_poses(5000, [100, 200], [2, 5])
     for index in range(1, len(poses)):
-        assert_true(poses[index] > poses[index-1] + 200)
+        #if not (poses[index] > poses[index-1] + 200):
+        #    raise ValueError("poses[index]=%r not > poses[index-1] + 200 = %r + 200" % (poses[index], poses[index-1]))
         assert_true(poses[index] < 5000)
 
 def test_expand_objects():
@@ -52,4 +57,22 @@ def test_filter_dict_by_keys():
     assert_true('chr2' in d4)
     assert_false('chr_bla' in d4)
 
+def test_fofn2fns():
+    """Get filenames from fofn"""
+    o_fn = op.join(OUT_DIR, 'test_fofn2fns.fofn')
+    with open(o_fn, 'w') as f:
+        f.write("124\n")
+    assert_equal(fofn2fns(o_fn) , ['124'])
 
+    o_fn = op.join(OUT_DIR, 'test_fofn2fns')
+    assert_equal(fofn2fns(o_fn) , [o_fn])
+
+def test_get_movie2bams_from_fofn():
+    fofn = op.join(OUT_DIR, 'test_get_movie2bams_from_fofn.fofn')
+    with open(fofn, 'w') as f:
+        f.write('/path/movie1.1.subreads.bam\n/path/movie1.2.subreads.bam\nmovie2.subreads.bam')
+    o = get_movie2bams_from_fofn(fofn)
+    print o
+    e = {'movie1': set(['/path/movie1.1.subreads.bam', '/path/movie1.1.subreads.bam']), 'movie2':set(['movie2.subreads.bam'])}
+    for k in e.keys():
+        assert_equal(o[k], e[k])

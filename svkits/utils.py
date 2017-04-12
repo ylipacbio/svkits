@@ -40,9 +40,9 @@ def get_movie2zmws_in_fasta(in_fasta):
 
 
 def fofn2fns(i_fofn):
-    """Get filenames from fofn"""
-    if not i_fofn.endswith('.fofn'):
-        return i_fofn
+    """Get filenames from a fofn or fn"""
+    if not i_fofn.endswith('fofn'):
+        return [i_fofn]
     fns = []
     for fn in open(i_fofn, 'r'):
         fn = fn.strip()

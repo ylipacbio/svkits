@@ -49,12 +49,6 @@ the original reference to the modified reference file."""
     return parser
 
 
-# del_a_substr_from_seq(seq, pos, n_bases):
-# del_a_substr_from_read(name, seq, pos, n_bases):
-# add_a_str_to_seq(seq, pos, n_bases):
-# ins_a_str_to_read(name, seq, pos, n_bases):
-# fasta_to_ordereddict(in_fasta):
-
 def make_sane(total_l, indel_type, lens, numbers):
     """Sanity check input."""
     def is_match(l, n, t):

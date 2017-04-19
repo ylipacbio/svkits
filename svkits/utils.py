@@ -63,7 +63,7 @@ def get_movie2bams_from_fofn(in_bam_fofn):
     e.g., if input bam fofn has two bam files of the same movie
     movie.1.subreads.bam
     movie.2.subreads.bam
-    return {'movie': ['movie.1.subreads.bam', 'movie2.subreads.bam']}
+    return {'movie': ['movie.1.subreads.bam', 'movie.2.subreads.bam']}
     """
     movie2bams = defaultdict(lambda:set())
     for fn in fofn2fns(in_bam_fofn):

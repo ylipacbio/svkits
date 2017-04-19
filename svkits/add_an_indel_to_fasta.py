@@ -29,9 +29,11 @@ the modified reference file."""
     parser.add_argument("out_fasta", help="Output FASTA with indels")
     parser.add_argument("out_bed", help="Ground truth SV calls in BED if modified fasta were used as reference")
     parser.add_argument("--n_bases", type=int, default=50, help="Number of bases to insert to or delete from a reference sequence")
+    parser.add_argument("--start_pos", type=int, default=None, help="Start position of the indel, None means a random pos will be used")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--insert", action='store_true', help="Insert a string to a sequence in in_fasta, and make a BED file with an Deletion SV call")
     group.add_argument("--delete", action='store_true', help="Delete a substring from a sequence in in_fasta, and make a BED file with an Insertion SV call")
+    group.add_argument("--inverse", action='store_true', help="Inverse a substring of a sequence in in_fasta, and make a BED file with an Inversion SV call")
     return parser
 
 
@@ -53,6 +55,28 @@ def del_a_substr_from_read(name, seq, pos, n_bases, simple_name=False):
     out_read = FastaRecord(out_name, out_seq)
     bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos,
                            sv_type='Insertion', sv_len=n_bases, seq=None,
+                           fmt=ARTIFICIAL_FMT, annotations=None)
+    return (out_read, bed_record)
+
+
+def inv_a_substr_of_seq(seq, pos, n_bases):
+    """Inverse n_bases starting from pos of sequence (seq)"""
+    if pos < 0 or pos + n_bases > len(seq):
+        raise ValueError("Could not inverse %r bases starting from pos %r in sequence of length %r" % (n_bases, pos, len(seq)))
+    return seq[0:pos] + seq[pos:pos+n_bases][::-1] + seq[pos+n_bases:]
+
+
+def inv_a_substr_of_read(name, seq, pos, n_bases, simple_name=False):
+    """Inverse n_bases bases  starting from pos of sequence(seq) of read (name)
+    return out_read, bed_record
+    """
+    out_seq = inv_a_substr_of_seq(seq=seq, pos=pos, n_bases=n_bases)
+    out_name = name + ' ' + 'ORIGINALLEN=%s;ACTION=INV:POS=%s;SVLEN=%s;NEWLEN=%s' % (len(seq), pos, n_bases, len(out_seq))
+    if simple_name:
+        out_name = name.split(' ')[0] + ' ' + ('' if len(name.split(' ')) == 1 else name.split(' ')[1]) + ';v_%s_%s' % (pos, n_bases)
+    out_read = FastaRecord(out_name, out_seq)
+    bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos,
+                           sv_type='Inversion', sv_len=n_bases, seq=None,
                            fmt=ARTIFICIAL_FMT, annotations=None)
     return (out_read, bed_record)
 
@@ -108,8 +132,8 @@ def get_ins_pos(seq_len):
 def run(args):
     """run main"""
     in_fasta, out_fasta, out_bed = args.in_fasta, args.out_fasta, args.out_bed
-    apply_insertion, apply_deletion = args.insert, args.delete
-    n_bases = args.n_bases
+    apply_insertion, apply_deletion, apply_inversion = args.insert, args.delete, args.inverse
+    n_bases, start_pos = args.n_bases, args.start_pos
 
     reads_d = fasta_to_ordereddict(in_fasta)
     selected_name = random.choice(reads_d.keys())
@@ -118,11 +142,14 @@ def run(args):
     if apply_deletion:
         if n_bases >= len(selected_seq):
             print "Unable to delete %s bases from a sequence of length %s" % (n_bases, len(selected_seq))
-        pos = get_del_pos(len(selected_seq), n_bases)
+        pos = get_del_pos(len(selected_seq), n_bases) if start_pos is None else start_pos
         out_read, bed_record = del_a_substr_from_read(selected_name, selected_seq, pos, n_bases)
     elif apply_insertion:
-        pos = get_ins_pos(len(selected_seq))
+        pos = get_ins_pos(len(selected_seq)) if start_pos is None else start_pos
         out_read, bed_record = ins_a_str_to_read(selected_name, selected_seq, pos, n_bases)
+    elif apply_inversion:
+        pos = get_del_pos(len(selected_seq), n_bases) if start_pos is None else start_pos
+        out_read, bed_record = inv_a_substr_of_read(selected_name, selected_seq, pos, n_bases)
     else:
         raise ValueError("%s can either insert a string to a reference sequence or delete a substring from a referece sequence." % op.basename(__file__))
 

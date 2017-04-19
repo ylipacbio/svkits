@@ -1,6 +1,7 @@
 import os.path as op
 from nose.tools import assert_equal, assert_true, assert_false
 from collections import defaultdict
+from svkits.add_an_indel_to_fasta import *
 from svkits.add_indels_to_fasta import *
 from svkits.utils import *
 
@@ -72,7 +73,21 @@ def test_get_movie2bams_from_fofn():
     with open(fofn, 'w') as f:
         f.write('/path/movie1.1.subreads.bam\n/path/movie1.2.subreads.bam\nmovie2.subreads.bam')
     o = get_movie2bams_from_fofn(fofn)
-    print o
-    e = {'movie1': set(['/path/movie1.1.subreads.bam', '/path/movie1.1.subreads.bam']), 'movie2':set(['movie2.subreads.bam'])}
+    e = {'movie1': set(['/path/movie1.1.subreads.bam', '/path/movie1.2.subreads.bam']), 'movie2':set(['movie2.subreads.bam'])}
     for k in e.keys():
         assert_equal(o[k], e[k])
+
+def test_inv_a_substr_of_seq():
+    o = inv_a_substr_of_seq('ABCAAACCC', 3, 5)
+    e = 'ABCCCAAAC'
+    assert_equal(o, e)
+
+def test_del_a_substr_from_seq():
+    o = del_a_substr_from_seq('ABCAAACCC', 2, 1)
+    e = 'ABAAACCC'
+    assert_equal(o, e)
+
+def test_add_a_str_to_seq():
+    o = add_a_str_to_seq('ABCTTT', 3, 10)
+    assert_equal(o[0:3], 'ABC')
+    assert_equal(o[13:], 'TTT')

@@ -8,7 +8,7 @@ Define utils used in
 from collections import defaultdict
 import os.path as op
 from pbcore.io import FastaReader
-from pbsv.functional.utils import realpath, rmpath, execute, execute_as_bash
+from pbsv.independent.utils import realpath, rmpath, execute, execute_as_bash
 
 
 def get_movie_and_zmw_from_name(name):
@@ -195,3 +195,25 @@ def remove_extension(name):
         if name.endswith(ext):
             return name[:-len(ext)]
     return name
+
+
+def mummer_plot(query_fa, target_fa, out_prefix):
+    """
+    Call mummer and mummerplot to align query_fa to target_fa
+    """
+    out_ps = "%s.ps" % out_prefix
+    out_png = "%s.png" % out_prefix
+    print "mummerplot %s vs %s, save to %s|png" % (query_fa, target_fa, out_ps)
+    if not op.exists(query_fa) or not op.exists(target_fa):
+        raise IOError("mummer inputs %s and %s must exist." % (query_fa, target_fa))
+
+    mums_fn = "%s.mums" % out_prefix
+    cmd = "mummer -mum -b -l 50 -c %s %s > %s" % (target_fa, query_fa, mums_fn)
+    execute(cmd)
+
+    cmd = "mummerplot -f -l -postscript -p %s %s" % (out_prefix, mums_fn)
+    execute(cmd)
+
+    cmd = "mummerplot -f -l -png -p %s %s" % (out_prefix, mums_fn)
+    execute(cmd)
+    return out_ps, out_png

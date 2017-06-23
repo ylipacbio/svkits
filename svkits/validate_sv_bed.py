@@ -5,7 +5,7 @@ compute number of all SV calls, good SV calls and false positive SV calls.
 
 import sys
 import argparse
-from pbsv.io.VcfIO import BedRecord, BedReader
+from .miscio import BedRecord, BedReader
 
 
 class Constant(object):
@@ -13,14 +13,9 @@ class Constant(object):
     MAX_START_DIFF_LEN = 20
 
 
-def all_calls(out_bed):
-    """return number of all calls."""
-    return [r for r in BedReader(out_bed)]
-
-
-def is_good_bed_record(std_record, out_record,
-                       max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
-                       max_start_diff_len=Constant.MAX_START_DIFF_LEN):
+def is_similar(std_record, out_record,
+               max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
+               max_start_diff_len=Constant.MAX_START_DIFF_LEN):
     """Return True if out_record is a good one according to std_record"""
     if out_record.chrom != std_record.chrom or \
         (out_record.sv_type.val != std_record.sv_type.val):
@@ -30,59 +25,6 @@ def is_good_bed_record(std_record, out_record,
     is_good_start = (abs(std_record.start - out_record.start) <= max_start_diff_len)
     return is_good_sv_len and is_good_start
 
-
-def good_calls(std_bed, out_bed,
-               max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
-               max_start_diff_len=Constant.MAX_START_DIFF_LEN):
-    """return number of good calls"""
-    std_records = [r for r in BedReader(std_bed)]
-    out_records = [r for r in BedReader(out_bed)]
-    ret = []
-    for out_record in out_records:
-        is_good = False
-        for std_record in std_records:
-            if is_good_bed_record(std_record, out_record, max_sv_len_diff_percentage, max_start_diff_len):
-                is_good = True
-                break
-        if is_good:
-            ret.append(out_record)
-    return ret
-
-
-def n_all_calls(out_bed):
-    return len(all_calls(out_bed))
-
-
-def n_good_calls(std_bed, out_bed,
-                 max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
-                 max_start_diff_len=Constant.MAX_START_DIFF_LEN):
-    return len(good_calls(std_bed, out_bed, max_sv_len_diff_percentage, max_start_diff_len))
-
-
-def n_false_postives(std_bed, out_bed,
-                     max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
-                     max_start_diff_len=Constant.MAX_START_DIFF_LEN):
-    """ False positives = (all calls) - (good calls)"""
-    return n_all_calls(out_bed) - n_good_calls(std_bed, out_bed, max_sv_len_diff_percentage, max_start_diff_len)
-
-
-def false_positive_calls(std_bed, out_bed,
-                         max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
-                         max_start_diff_len=Constant.MAX_START_DIFF_LEN):
-    std_records = [r for r in BedReader(std_bed)]
-    out_records = [r for r in BedReader(out_bed)]
-    ret = []
-    for out_record in out_records:
-        is_good = False
-        for std_record in std_records:
-            if is_good_bed_record(std_record, out_record, max_sv_len_diff_percentage, max_start_diff_len):
-                is_good = True
-                break
-        if not is_good:
-            ret.append(out_record)
-    return ret
-
-
 def remove_redunant_records(records,
                             max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
                             max_start_diff_len=Constant.MAX_START_DIFF_LEN):
@@ -91,13 +33,92 @@ def remove_redunant_records(records,
     for r in records:
         uniq = True
         for p in ret:
-            if is_good_bed_record(r, p, max_sv_len_diff_percentage, max_start_diff_len):
+            if is_similar(r, p, max_sv_len_diff_percentage, max_start_diff_len):
                 uniq = False
                 break
         if uniq:
             ret.append(r)
     return ret
 
+
+class CompareSVCalls(object):
+    def __init__(self, std_bed_fn, out_bed_fn,
+                 max_sv_len_diff_percentage=Constant.MAX_SV_LEN_DIFF_PERCENTAGE,
+                 max_start_diff_len=Constant.MAX_START_DIFF_LEN):
+        self.std_bed_fn = std_bed_fn
+        self.out_bed_fn = out_bed_fn
+        self.max_sv_len_diff_percentage = max_sv_len_diff_percentage
+        self.max_start_diff_len = max_start_diff_len
+
+        self.std_records = [r for r in BedReader(self.std_bed_fn)]
+        self.out_records = [r for r in BedReader(self.out_bed_fn)]
+
+    @property
+    def true_positive_call_ids_to_std_call_ids(self):
+        """{index_of_true_positive_call: index_of_corresponding std_call}"""
+        ret  = {} # index of true positive call: index of similar ground truth call
+        for i, out_record in enumerate(self.out_records):
+            for j, std_record in enumerate(self.std_records):
+                if is_similar(std_record, out_record, self.max_sv_len_diff_percentage, self.max_start_diff_len):
+                    ret[i] = j
+                    break
+        return ret
+
+    @property
+    def true_positive_call_ids(self):
+        return self.true_positive_call_ids_to_std_call_ids.keys()
+
+    @property
+    def true_positive_calls(self):
+        """return true positive SV calls."""
+        return [self.out_records[i] for i in self.true_positive_call_ids_to_std_call_ids]
+
+    @property
+    def n_true_positive_calls(self):
+        return len(self.true_positive_call_ids_to_std_call_ids.keys())
+
+    @property
+    def n_std_calls(self):
+        return len(self.std_records)
+
+    @property
+    def n_out_calls(self):
+        return len(self.out_records)
+
+    @property
+    def false_negative_call_ids(self):
+        return sorted(set(range(0, self.n_std_calls)).difference(set(self.true_positive_call_ids_to_std_call_ids.keys())))
+
+    @property
+    def false_negative_calls(self):
+        return [self.std_records[i] for i in self.false_negative_call_ids]
+
+    @property
+    def n_false_negative_calls(self):
+        return self.n_std_calls - self.n_true_positive_calls
+
+    @property
+    def false_positive_call_ids(self):
+        """ False positives = (all out calls) - (true positive calls)"""
+        return sorted(set(range(0, self.n_out_calls)).difference(set(self.true_positive_call_ids)))
+
+    @property
+    def false_positive_calls(self):
+        return [self.out_records[i] for i in self.false_positive_call_ids]
+
+    @property
+    def n_false_positive_calls(self):
+        return len(self.false_positive_calls)
+
+    def pretty_true_positive_calls(self):
+        """ e.g., chrI    12578   12578   Insertion   386 --> (0, 0) --> chrI 12764   12764   Insertion   378"""
+        ret = []
+        for i, j in self.true_positive_call_ids_to_std_call_ids.iteritems():
+            out, std = self.out_records[i], self.std_records[j]
+            start_diff, len_diff = out.start - std.start, out.sv_len - std.sv_len
+            s = '%s --> (i=%s, j=%s, start_diff=%s, len_diff=%s) --> %s' % (record2str(out), i, j, start_diff, len_diff, record2str(std))
+            ret.append(s)
+        return '\n'.join(ret)
 
 def get_parser():
     """return arg parser"""
@@ -108,14 +129,29 @@ def get_parser():
     p.add_argument("--max_start_diff_len", type=int, default=Constant.MAX_START_DIFF_LEN, help="Maximum difference of start positions allowed to merge two SV calls")
     return p
 
+def record2str(r):
+    return '\t'.join([str(r.chrom), str(r.start), str(r.end), str(r.sv_type), str(r.sv_len)])
+
+def records2str(records):
+    return '\n'.join([record2str(r) for r in records])
 
 def run(args):
     """run main"""
-    std_bed = args.std_bed
-    out_bed = args.out_bed
-    print 'all_calls=%r' % n_all_calls(out_bed=out_bed)
-    print 'good_calls=%r' % n_good_calls(std_bed=std_bed, out_bed=out_bed)
-    print 'false_positives=%r' % n_false_postives(std_bed=std_bed, out_bed=out_bed)
+    cmpsv = CompareSVCalls(std_bed_fn=args.std_bed, out_bed_fn=args.out_bed, max_sv_len_diff_percentage=args.max_sv_len_diff_percentage, max_start_diff_len=args.max_start_diff_len)
+
+    print 'n out calls: %r' % cmpsv.n_out_calls
+    print 'n std calls: %r' % cmpsv.n_std_calls
+    print 'n true positive: %r' % cmpsv.n_true_positive_calls
+    print 'n false negative: %r' % cmpsv.n_false_negative_calls
+    print 'n false positive: %r' % cmpsv.n_false_positive_calls
+
+    print '---------------\n'
+    print 'true positive calls:\n%s\n' % cmpsv.pretty_true_positive_calls()
+    print '---------------\n'
+    print 'false nagative calls:\n%s\n' % records2str(cmpsv.false_negative_calls)
+    print '---------------\n'
+    print 'false positive calls:\n%s\n' % records2str(cmpsv.false_positive_calls)
+    print '---------------\n'
     return 0
 
 def main():

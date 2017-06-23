@@ -7,3 +7,6 @@ wheel:
 unit-test:
 	# These use the local tree. No installation required. Extremely fast.
 	nosetests ${MY_NOSE_FLAGS} utests.py
+
+pylint:
+	pylint --errors-only svkits/*.py

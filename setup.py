@@ -3,8 +3,7 @@ import re
 from setuptools import find_packages
 
 try:
-    from setuptools import setup
-except ImportError:
+    from setuptools import setup except ImportError:
     from distutils.core import setup
 
 version = __import__('svkits').get_version()
@@ -48,7 +47,9 @@ setup(
         'make-subreads-bam-from-zmws = svkits.make_subreads_bam_from_zmws:main',
         'validate-sv-bed = svkits.validate_sv_bed:main',
         'add-an-indel-to-fasta = svkits.add_an_indel_to_fasta:main',
-        'add-indels-to-fasta = svkits.add_indels_to_fasta:main'
+        'add-indels-to-fasta = svkits.add_indels_to_fasta:main',
+        'mummer-plot = svkits.mummer_plot:main',
+        'sim-x2coverage = svkits.sim_x2coverage:main'
     ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),
     tests_require=['nose'],

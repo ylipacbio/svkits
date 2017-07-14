@@ -3,8 +3,10 @@ import re
 from setuptools import find_packages
 
 try:
-    from setuptools import setup except ImportError:
+    from setuptools import setup
     from distutils.core import setup
+except ImportError:
+    pass
 
 version = __import__('svkits').get_version()
 

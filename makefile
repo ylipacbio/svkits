@@ -8,5 +8,8 @@ unit-test:
 	# These use the local tree. No installation required. Extremely fast.
 	nosetests ${MY_NOSE_FLAGS} utests.py
 
+cram:
+	cd tests/cram && cram tests/cram/*.t && cd ..
+
 pylint:
 	pylint --errors-only svkits/*.py

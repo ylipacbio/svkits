@@ -15,7 +15,7 @@ import numpy as np
 import os.path as op
 from pbcore.util.Process import backticks
 from pbcore.io import FastaRecord, FastaWriter, FastaReader
-from pbsv.functional.common import SvType
+from pbsv.independent.common import SvType
 from pbsv.io.VcfIO import BedRecord, BedWriter
 from .add_an_indel_to_fasta import fasta_to_ordereddict, get_del_pos, get_ins_pos, del_a_substr_from_read, ins_a_str_to_read
 

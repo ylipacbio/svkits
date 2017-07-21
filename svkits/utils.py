@@ -21,22 +21,30 @@ def get_movie_and_zmw_from_name(name):
         raise ValueError("Read %r is not a PacBio read." % name)
 
 
-def get_movie2zmws_in_txt(in_txt):
-    """Return movie2zmws {movie: set(zmws)} of zmws or reads in txt"""
+def get_movie2zmws_from_zmws(zmws):
+    """
+    ..doctest:
+        d = get_movie2zmws_from_zmws(['movie/0', 'movie1/1'])
+        d['movie']
+        0
+        d['movie1']
+        1
+    """
     movie2zmws = defaultdict(lambda:set()) #movie --> set of zmws
-    for name in open(in_txt, 'r'):
-        movie, zmw = get_movie_and_zmw_from_name(name)
+    for zmw in zmws:
+        movie, zmw = get_movie_and_zmw_from_name(zmw)
         movie2zmws[movie].add(zmw)
     return movie2zmws
+
+
+def get_movie2zmws_in_txt(in_txt):
+    """Return movie2zmws {movie: set(zmws)} of zmws or reads in txt"""
+    return get_movie2zmws_from_zmws(zmws=[r for r in open(in_txt, 'r')])
 
 
 def get_movie2zmws_in_fasta(in_fasta):
     """Return movie2zmws {movie: set(zmws)} of reads in fasta"""
-    movie2zmws = defaultdict(lambda:set()) #movie --> set of zmws
-    for r in FastaReader(in_fasta):
-        movie, zmw = get_movie_and_zmw_from_name(r.name)
-        movie2zmws[movie].add(zmw)
-    return movie2zmws
+    return get_movie2zmws_from_zmws(zmws=[r.name for r in FastaReader(in_fasta)])
 
 
 def fofn2fns(i_fofn):
@@ -135,6 +143,10 @@ def get_bam2zmws(movie2zmws, movie2bams):
     movie2bams {'movie': ['movie.1.subreads.bam', 'movie.2.subreads.bam']}
     return bam2zmws{'movie.1.subreads.bam': [20,21,31], 'movie.2.subreads.bam': [20,21,31]}
     """
+    for movie in movie2zmws.keys():
+        if movie not in movie2bams:
+            raise ValueError("Could not find subreads bam of movie %s in %r" % (movie, movie2bams.values()))
+
     bam2zmws = {}
     for movie, zmws in movie2zmws.iteritems():
         in_subreads_bam_files = list(movie2bams[movie])
@@ -184,6 +196,7 @@ def make_subreads_bam(movie2zmws, movie2bams, out_prefix, dry_run=False):
             raise ValueError("%s does not exist" % out_xml)
         if not op.exists(out_bam):
             raise ValueError("%s does not exist" % out_bam)
+    return out_bam
 
 
 EXTENS = ['.subreadset.xml', '.subreads.bam', '.xml', '.bam', '.fasta', '.fa']
@@ -197,7 +210,7 @@ def remove_extension(name):
     return name
 
 
-def mummer_plot(query_fa, target_fa, out_prefix):
+def mummer_plot(query_fa, target_fa, out_prefix, min_match_len=50):
     """
     Call mummer and mummerplot to align query_fa to target_fa
     """
@@ -208,7 +221,7 @@ def mummer_plot(query_fa, target_fa, out_prefix):
         raise IOError("mummer inputs %s and %s must exist." % (query_fa, target_fa))
 
     mums_fn = "%s.mums" % out_prefix
-    cmd = "mummer -mum -b -l 50 -c %s %s > %s" % (target_fa, query_fa, mums_fn)
+    cmd = "mummer -mum -b -l %s -c %s %s > %s" % (min_match_len, target_fa, query_fa, mums_fn)
     execute(cmd)
 
     cmd = "mummerplot -f -l -postscript -p %s %s" % (out_prefix, mums_fn)

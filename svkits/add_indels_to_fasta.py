@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 """
 Add indels (insertions and deletions) to a reference FASTA file,
 and make BED of SV calls mapping subreads of the reference FASTA file
@@ -70,7 +71,7 @@ def weighted_choose(total_n, p_dict):
     return dict {k: num}
     """
     keys = p_dict.keys()
-    r = np.random.choice(keys, p=[p_dict[k] for k in keys], size=total_n)
+    r = np.random.choice(keys, p=[p_dict[k] for k in keys], size=total_n) # pylint: disable=no-member
     c = Counter(r)
     return {k:c[k] for k in keys}
 
@@ -104,8 +105,8 @@ def get_del_poses(l_seq, lens, numbers):
     del_sum = sum([l*n for l,n in zip(lens,numbers)])
     high = l_seq - del_sum
     if low > high:
-        raise ValueError("Could not find propoer del posistion, sequence length %r * 0.2 = %r > %r - %r" % (l_seq, low, l_seq, max(lens), high))
-    poses = sorted(np.random.randint(low=low, high=high, size=sum(numbers)))
+        raise ValueError("Could not find propoer del posistion, sequence length %r * 0.2 = %r > %r - %r" % (l_seq, low, l_seq, max(lens, high)))
+    poses = sorted(np.random.randint(low=low, high=high, size=sum(numbers))) # pylint: disable=no-member
     for index in range(0, len(poses)-1)[::-1]:
         pos, next_pos = poses[index], poses[index+1]
         if next_pos - pos < max(lens): # deletion pos should be sparse
@@ -117,7 +118,7 @@ def get_del_poses(l_seq, lens, numbers):
 
 def get_ins_poses(l_seq, lens, numbers):
     """Get insertion indels' starting positions"""
-    poses = sorted(np.random.randint(low=0, high=int(l_seq * 0.8), size=sum(numbers)))
+    poses = sorted(np.random.randint(low=0, high=int(l_seq * 0.8), size=sum(numbers))) # pylint: disable=no-member
     for index in range(1, len(poses)):
         pos, pre_pos = poses[index], poses[index-1]
         if pos - pre_pos < max(lens): # insertion pos should be sparse for convenience of simulation

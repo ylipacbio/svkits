@@ -11,7 +11,7 @@ import argparse
 import os.path as op
 from pbcore.util.Process import backticks
 from pbcore.io import FastaReader, FastaWriter
-from pbsv.functional.utils import mktemp
+from pbsv.run import _mktemp
 from svkits.utils import mummer_plot, realpath, rmpath
 
 
@@ -55,7 +55,7 @@ def run(args):
     target_region = args.target_region.split('-') if args.target_region is not None else None
 
     new_query_fasta, new_target_fasta = query_fasta, target_fasta
-    tmpdir = mktemp()
+    tmpdir = _mktemp()
 
     if query_region is not None:
         new_query_fasta = op.join(tmpdir, op.basename(query_fasta)) + '.' + args.query_region + '.fasta'

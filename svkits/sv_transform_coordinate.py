@@ -41,8 +41,6 @@ def sv_transform_chrom_coordinate(i_fn, o_fn):
             writer.writeRecord(r.transform_chrom_coordinate())
 
 def run(args):
-    parser = get_parser()
-    args = parser.parse_args(args)
     sv_transform_chrom_coordinate(args.input_sv_fn, args.output_sv_fn)
 
 def main():

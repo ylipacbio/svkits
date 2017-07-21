@@ -52,9 +52,9 @@ setup(
         'add-indels-to-fasta = svkits.add_indels_to_fasta:main',
         'mummer-plot = svkits.mummer_plot:main',
         'sim-x2coverage = svkits.sim_x2coverage:main',
-        'trim_lq.py = svkits.trim_lq:main',
+        'trim_lq = svkits.trim_lq:main',
         'fq2fa = svkits.fq2fa:main',
-        'sv_pbdagcon.py = svkits.sv_pgdagcon:main',
+        'sv_pbdagcon = svkits.sv_pbdagcon:main',
         'symlink_smrtlink_sv_files = svkits.symlink_smrtlink_sv_files:main',
         'sv_transform_coordinate = svkits.sv_transform_coordinate:main'
 

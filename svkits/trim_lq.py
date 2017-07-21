@@ -114,9 +114,6 @@ def trim_lq(i_fn, o_fn, min_qv, windowsize):
 
 
 def run(args):
-    parser = get_parser()
-    args = parser.parse_args(args)
-
     trim_lq(args.input_fn, args.output_fn, args.min_qv, args.windowsize)
 
 def main():

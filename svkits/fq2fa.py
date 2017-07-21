@@ -44,8 +44,6 @@ def fq2fa(i_fq_fn, o_fa_fn):
 
 
 def run(args):
-    parser = get_parser()
-    args = parser.parse_args(args)
     fq2fa(args.input_fq_fn, args.output_fa_fn)
 
 def main():

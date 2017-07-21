@@ -51,7 +51,13 @@ setup(
         'add-an-indel-to-fasta = svkits.add_an_indel_to_fasta:main',
         'add-indels-to-fasta = svkits.add_indels_to_fasta:main',
         'mummer-plot = svkits.mummer_plot:main',
-        'sim-x2coverage = svkits.sim_x2coverage:main'
+        'sim-x2coverage = svkits.sim_x2coverage:main',
+        'trim_lq.py = svkits.trim_lq:main',
+        'fq2fa = svkits.fq2fa:main',
+        'sv_pbdagcon.py = svkits.sv_pgdagcon:main',
+        'symlink_smrtlink_sv_files = svkits.symlink_smrtlink_sv_files:main',
+        'sv_transform_coordinate = svkits.sv_transform_coordinate:main'
+
     ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),
     tests_require=['nose'],

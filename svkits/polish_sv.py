@@ -106,7 +106,7 @@ def make_script_of_pbsv_run(reads_fn, ref_fasta_fn, cfg_fn, o_sv_fn, o_script_fn
     cmds = []
     tmp_sv_fn = op.join(op.dirname(o_sv_fn), 'use_substr_as_chrom.%s' % op.basename(o_sv_fn))
     c0 = 'pbsv run %s %s %s --cfg_fn %s' % (ref_fasta_fn, reads_fn, tmp_sv_fn, cfg_fn)
-    c1 = 'python sv_transform_chrom_coordinate %s %s' % (tmp_sv_fn, o_sv_fn)
+    c1 = 'sv_transform_coordinate %s %s' % (tmp_sv_fn, o_sv_fn)
     cmds = [c0, c1]
     print 'Running %s' % o_script_fn
     execute_as_bash(cmds, o_script_fn)

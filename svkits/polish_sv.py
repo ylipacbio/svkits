@@ -105,9 +105,11 @@ def make_consensus_script_of_subreads_bam(subreads_bam, o_script_fn, o_consensus
 def make_script_of_pbsv_run(reads_fn, ref_fasta_fn, cfg_fn, o_sv_fn, o_script_fn):
     cmds = []
     tmp_sv_fn = op.join(op.dirname(o_sv_fn), 'use_substr_as_chrom.%s' % op.basename(o_sv_fn))
-    c0 = 'pbsv run %s %s %s --cfg_fn %s' % (ref_fasta_fn, reads_fn, tmp_sv_fn, cfg_fn)
-    c1 = 'sv_transform_coordinate %s %s' % (tmp_sv_fn, o_sv_fn)
-    cmds = [c0, c1]
+    chained_bam_fn = op.join(op.dirname(o_sv_fn), 'polished_ref_chained.bam')
+    c0 = 'pbsv align %s %s %s --cfg_fn %s' % (ref_fasta_fn, reads_fn, chained_bam_fn, cfg_fn)
+    c1 = 'pbsv call %s %s %s --cfg_fn %s' % (ref_fasta_fn, chained_bam_fn, tmp_sv_fn, cfg_fn)
+    c2 = 'sv_transform_coordinate %s %s' % (tmp_sv_fn, o_sv_fn)
+    cmds = [c0, c1, c2]
     print 'Running %s' % o_script_fn
     execute_as_bash(cmds, o_script_fn)
 

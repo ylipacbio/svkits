@@ -83,7 +83,7 @@ def make_consensus_script_of_subreads_bam(subreads_bam, o_script_fn, o_consensus
     """Make a script file which when excuted, make a consensus sequence of subreads_bam"""
     cmds = []
     output_prefix = op.join(op.dirname(o_consensus_fn), 'sv_pbdagcon')
-    c0 = 'python sv_pbdagcon %s %s %s' % (subreads_bam, output_prefix, o_consensus_id)
+    c0 = 'sv_pbdagcon %s %s %s' % (subreads_bam, output_prefix, o_consensus_id)
     output_dagcon_fasta = output_prefix + '_ref.fasta'
     align_bam = op.join(op.dirname(o_consensus_fn), 'sr2_sv_pbdagcon.bam')
     nproc = 16
@@ -94,8 +94,8 @@ def make_consensus_script_of_subreads_bam(subreads_bam, o_script_fn, o_consensus
     hqlq_out_fa, hqlq_out_fq = output_prefix + '.hqlq.fasta', output_prefix + '.hqlq.fastq'
     out_fa, out_fq = output_prefix + '.fasta', output_prefix + '.fastq'
     c4 = "variantCaller --algorithm=best {aln_bam} --verbose -j{nproc} --minMapQV {minqv} --referenceFilename={ref_fa} -o {out_fa} -o {out_fq}".format(aln_bam=align_bam, ref_fa=output_dagcon_fasta, out_fa=hqlq_out_fa, out_fq=hqlq_out_fq, nproc=nproc, minqv=10)
-    c5 = 'python trim_lq %s %s --min_qv 30' % (hqlq_out_fq, out_fq) # simply remove lower case sequences on both ends
-    c6 = 'python fq2fa %s %s' % (out_fq, out_fa)
+    c5 = 'trim_lq %s %s --min_qv 30' % (hqlq_out_fq, out_fq) # simply remove lower case sequences on both ends
+    c6 = 'fq2fa %s %s' % (out_fq, out_fa)
     cmds = [c0, c1, c2, c3, c4, c5, c6]
 
     print 'Running %s' % o_script_fn

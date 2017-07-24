@@ -52,11 +52,13 @@ def get_query_subreads_from_alns(alns):
     """Given a list of alignments, return a list of non-redudant query subreads"""
     return list(set([aln.query_name for aln in alns]))
 
-from svkits.utils import get_movie2zmws_from_zmws, make_subreads_bam
+from svkits.utils import get_movie2zmws_from_zmws, make_subreads_bam, make_subreads_bam_using_pbcore
 
 def make_subreads_bam_of_zmws(movie2bams, zmws, out_prefix, dry_run=False):
     movie2zmws = get_movie2zmws_from_zmws(zmws)
     return make_subreads_bam(movie2zmws, movie2bams, out_prefix, dry_run=dry_run)
+    #TODO
+    #return make_subreads_bam_using_pbcore(movie2zmws, movie2bams, out_prefix, dry_run=dry_run)
 
 def get_subreads_bam_files_from_xml(in_subreads_xml):
     return [fn for fn in DataSet(in_subreads_xml).toExternalFiles() if fn.endswith('subreads.bam')]
@@ -94,18 +96,24 @@ def make_consensus_script_of_subreads_bam(subreads_bam, o_script_fn, o_consensus
     hqlq_out_fa, hqlq_out_fq = output_prefix + '.hqlq.fasta', output_prefix + '.hqlq.fastq'
     out_fa, out_fq = output_prefix + '.fasta', output_prefix + '.fastq'
     c4 = "variantCaller --algorithm=best {aln_bam} --verbose -j{nproc} --minMapQV {minqv} --referenceFilename={ref_fa} -o {out_fa} -o {out_fq}".format(aln_bam=align_bam, ref_fa=output_dagcon_fasta, out_fa=hqlq_out_fa, out_fq=hqlq_out_fq, nproc=nproc, minqv=10)
-    c5 = 'trim_lq %s %s --min_qv 30' % (hqlq_out_fq, out_fq) # simply remove lower case sequences on both ends
+    c5 = 'trim_lq %s %s --min_qv 20' % (hqlq_out_fq, out_fq) # simply remove lower case sequences on both ends
     c6 = 'fq2fa %s %s' % (out_fq, out_fa)
     cmds = [c0, c1, c2, c3, c4, c5, c6]
 
     print 'Running %s' % o_script_fn
     execute_as_bash(cmds, o_script_fn)
 
+def bed_fn(o_prefix):
+    return op.join(data_dir, ('%s.bed' % o_prefix))
 
-def make_script_of_pbsv_run(reads_fn, ref_fasta_fn, cfg_fn, o_sv_fn, o_script_fn):
+def sh_fn(o_prefix):
+    return op.join(data_dir, ('%s.sh' % o_prefix))
+
+def make_script_of_pbsv_ngmlr_call(reads_fn, ref_fasta_fn, cfg_fn, o_prefix):
     cmds = []
-    tmp_sv_fn = op.join(op.dirname(o_sv_fn), 'use_substr_as_chrom.%s' % op.basename(o_sv_fn))
-    chained_bam_fn = op.join(op.dirname(o_sv_fn), 'polished_ref_chained.bam')
+    o_sv_fn, o_script_fn = bed_fn(o_prefix), sh_fn(o_prefix)
+    tmp_sv_fn  = o_script_fn + '.use_substr_as_chrom.sh'
+    chained_bam_fn = o_prefix + '.chained.bam'
     c0 = 'pbsv align %s %s %s --cfg_fn %s' % (ref_fasta_fn, reads_fn, chained_bam_fn, cfg_fn)
     c1 = 'pbsv call %s %s %s --cfg_fn %s' % (ref_fasta_fn, chained_bam_fn, tmp_sv_fn, cfg_fn)
     c2 = 'sv_transform_coordinate %s %s' % (tmp_sv_fn, o_sv_fn)
@@ -113,6 +121,28 @@ def make_script_of_pbsv_run(reads_fn, ref_fasta_fn, cfg_fn, o_sv_fn, o_script_fn
     print 'Running %s' % o_script_fn
     execute_as_bash(cmds, o_script_fn)
 
+def make_script_of_pbsv_blasr_call(reads_fn, ref_fasta_fn, cfg_fn, o_prefix):
+    """Using blasr to make alignments."""
+    cmds = []
+    o_sv_fn, o_script_fn = bed_fn(o_prefix), sh_fn(o_prefix)
+    tmp_sv_fn  = o_script_fn + '.use_substr_as_chrom.sh'
+    chained_bam_fn = o_prefix + '.chained.bam'
+    c0 = 'blasr %s %s --bam --out %s --bestn 1 --maxMatch 15' % (reads_fn, ref_fasta_fn, chained_bam_fn)
+    c1 = 'pbsv call %s %s %s --cfg_fn %s' % (ref_fasta_fn, chained_bam_fn, tmp_sv_fn, cfg_fn)
+    c2 = 'sv_transform_coordinate %s %s' % (tmp_sv_fn, o_sv_fn)
+    print 'Running %s' % o_script_fn
+    execute_as_bash(cmds, o_script_fn)
+
+def make_diagnose_script_for_pbsv_run(o_dir):
+    diagnose_fn = op.join(o_dir, 'diagnose.sh')
+    cmd = """
+    fastalen polished.fasta
+    fastalen polished.hqlq.fasta
+    blasr polished.fasta sv_reference_w_extension.fasta --header --maxMatch 15 -m 4
+    blasr polished.hqlq.fasta sv_reference_w_extension.fasta --header --maxMatch 15 -m 4
+    """
+    with open(diagnose_fn, 'w') as w:
+        w.write(cmd)
 
 def write_fasta(o_fasta_fn, records):
     """Write a list of fasta records [(name, seq), ...,  (name, seq)] to o_fasta_fn"""
@@ -126,7 +156,7 @@ def substr_fasta(fileobj, chrom, start, end, o_fasta_fn):
         seq = fileobj.fetch(chrom, start, end)
     except Exception as e:
         raise ValueError("Could not get substring (%s, %s, %s) from %s" % (chrom, start, end, fileobj.filename))
-    name = '%s/%s_%s' % (chrom, start, end)
+    name = '%s__substr__%s_%s' % (chrom, start, end)
     write_fasta(o_fasta_fn, [(name, seq)])
 
 
@@ -137,7 +167,7 @@ if __name__ == "__main__":
     subreads_xml_fn = op.join(in_dir, "subreads.xml")
     genome_fa = op.join(in_dir, "genome.fa")
     bed_fn = op.join(in_dir, 'structural_variants.bed')
-    bed_fn = op.join(in_dir, 'chrV_116286_116286_Insertion_5899.bed')
+    #bed_fn = op.join(in_dir, 'chrV_116286_116286_Insertion_5899.bed')
     out_dir = 'out'
     reference_fasta_obj = Fastafile(genome_fa)
     REFERENCE_EXTENSION = 200000
@@ -174,10 +204,20 @@ if __name__ == "__main__":
             ref_fasta_fn = op.join(data_dir, 'sv_reference_w_extension.fasta')
             substr_fasta(fileobj=reference_fasta_obj, chrom=bed_record.chrom, start=ref_start, end=ref_end, o_fasta_fn=ref_fasta_fn)
 
-            polished_sv_fn = op.join(data_dir, 'polished.sv.bed')
-            polish_sv_script_fn = op.join(data_dir, 'pbsv_run_polish.sh')
-            make_script_of_pbsv_run(reads_fn=consensus_fn, ref_fasta_fn=ref_fasta_fn, cfg_fn=POLISH_CFG_FN, o_sv_fn=polished_sv_fn, o_script_fn=polish_sv_script_fn)
+            o_prefix = op.join(data_dir, 'polish.qv20.ngmlr')
+            make_script_of_pbsv_ngmlr_call(reads_fn=consensus_fn, ref_fasta_fn=ref_fasta_fn, cfg_fn=POLISH_CFG_FN, o_prefix=o_prefix)
 
+            o_prefix = op.join(data_dir, 'polish.hqlq.ngmlr')
+            consensus_hqlq_fa = op.join(data_dir, 'polished.hqlq.fasta')
+            make_script_of_pbsv_ngmlr_call(reads_fn=consensus_hqlq_fa, ref_fasta_fn=ref_fasta_fn, cfg_fn=POLISH_CFG_FN, o_prefix=o_prefix)
+
+            o_prefix = op.join(data_dir, 'polish.qv20.blasr')
+            make_script_of_pbsv_blasr_call(reads_fn=consensus_fn, ref_fasta_fn=ref_fasta_fn, cfg_fn=POLISH_CFG_FN, o_prefix=o_prefix)
+
+            o_prefix = op.join(data_dir, 'polish.hqlq.blasr')
+            make_script_of_pbsv_blasr_call(reads_fn=consensus_hqlq_fa, ref_fasta_fn=ref_fasta_fn, cfg_fn=POLISH_CFG_FN, o_prefix=o_prefix)
+
+            make_diagnose_script_for_pbsv_run(o_dir=data_dir)
             if i == 1000:
                 break
 

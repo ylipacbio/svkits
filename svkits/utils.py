@@ -162,6 +162,9 @@ def execute_cmds(cmds, dry_run):
         if not dry_run:
             execute(cmd)
 
+def make_subreads_bam_using_pbcore(movie2zmws, movie2bams, out_prefix, dry_run=False):
+    pass
+
 def make_subreads_bam(movie2zmws, movie2bams, out_prefix, dry_run=False):
     """
     movie2zmws --> {movie: [zmw1,zmw2,..]}

@@ -56,7 +56,8 @@ setup(
         'fq2fa = svkits.fq2fa:main',
         'sv_pbdagcon = svkits.sv_pbdagcon:main',
         'symlink_smrtlink_sv_files = svkits.symlink_smrtlink_sv_files:main',
-        'sv_transform_coordinate = svkits.sv_transform_coordinate:main'
+        'sv_transform_coordinate = svkits.sv_transform_coordinate:main',
+        'sam2m4 = svkits.sam2m4:main'
 
     ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),

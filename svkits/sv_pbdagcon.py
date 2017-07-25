@@ -143,9 +143,8 @@ def make_aln_input_to_ref(fasta_filename, ref_filename,
     os.remove(tmp_out)
 
 
-def pbdagcon_wrapper(fasta_filename, output_prefix,
-                     consensus_name, nproc=8,
-                     maxScore=-1000, min_seq_len=300):
+def pbdagcon_wrapper(fasta_filename, output_prefix, consensus_name, nproc=8,
+                     maxScore=-1000, min_seq_len=300, use_first_seq_if_fail=True):
     """
     (1) Find the best seed as reference
     (2) Align rest to seed
@@ -190,13 +189,17 @@ def pbdagcon_wrapper(fasta_filename, output_prefix,
                 if not 'N' in seq: # Don't write if seq contains N
                     writer.write(">{0}\n{1}\n".format(name, seq))
         os.remove(tmp_cons_filename)
-
     except AlignGraphUtilError:
         # pick the first sequence as reference as a backup plan
-        first_seq = FastaReader(fasta_filename).__iter__().next()
-        with open(ref_filename, 'w') as f:
-            f.write(">{0}_ref\n{1}\n".
-                    format(consensus_name, first_seq.sequence))
+        if use_first_seq_if_fail:
+            first_seq = FastaReader(fasta_filename).__iter__().next()
+            with open(ref_filename, 'w') as f:
+                f.write(">{0}_ref\n{1}\n".
+                        format(consensus_name, first_seq.sequence))
+        else:
+            #("Could not make pbdgacon consensus for %s" % fasta_filename)
+            with open(ref_filename, 'w') as f:
+                f.write("") # empty output
         if op.exists(tmp_cons_filename):
             os.remove(tmp_cons_filename)
     return 0
@@ -210,6 +213,7 @@ def get_parser():
     parser.add_argument("consensus_id", help="Consensus sequence ID name (ex: chr1_100_100_Insertion)")
     parser.add_argument("--nproc", default=8, type=int, help="Number of processes")
     parser.add_argument("--maxScore", default=-1000, type=int, help="blasr maxScore")
+    parser.add_argument("--use_first_seq_if_fail", default=True, type=bool, action='store_false', help="Use the first sequence as backup reference if pbdagcon fails")
     parser.add_argument("--version", "-v", action='version', version='%(prog)s ' + get_version())
     return parser
 
@@ -241,7 +245,7 @@ def run(args):
     #convert subreads.bam to subread.fasta
     sr_fasta = get_fasta_fn_from_subreads_bam_fn(args.input_subreads_bam)
     op.exists(sr_fasta)
-    pbdagcon_wrapper(fasta_filename=sr_fasta, output_prefix=args.output_prefix, consensus_name=args.consensus_id, nproc=args.nproc, maxScore=args.maxScore)
+    pbdagcon_wrapper(fasta_filename=sr_fasta, output_prefix=args.output_prefix, consensus_name=args.consensus_id, nproc=args.nproc, maxScore=args.maxScore, use_first_seq_if_fail=args.use_first_seq_if_fail)
 
 def main():
     """main"""

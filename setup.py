@@ -54,7 +54,6 @@ setup(
         'sim-x2coverage = svkits.sim_x2coverage:main',
         'trim_lq = svkits.trim_lq:main',
         'fq2fa = svkits.fq2fa:main',
-        'sv_pbdagcon = svkits.sv_pbdagcon:main',
         'symlink_smrtlink_sv_files = svkits.symlink_smrtlink_sv_files:main',
         'sv_transform_coordinate = svkits.sv_transform_coordinate:main',
         'sam2m4 = svkits.sam2m4:main'

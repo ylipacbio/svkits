@@ -252,7 +252,10 @@ class BedReader(ReaderBase):
             line = line.strip()
             if len(line) > 0 and line[0] != '#':
                 try:
-                    yield BedRecord.fromString(line)
+                    fs = line.split()
+                    def f(s):
+                        return 'Insertion' if 'ins' in s.lower() else 'Deletion' if 'del' in s.lower() else 'None'
+                    yield BedRecord(chrom=fs[0], start=fs[1], end=fs[2], sv_type=f(fs[3]), sv_len=fs[4], seq='.', fmt='1/1:1:1')
                 except Exception as err:
                     msg = '{}\nError reading line {} of BED input:\n{}\n{!r}'.format(
                             traceback.format_exc(),

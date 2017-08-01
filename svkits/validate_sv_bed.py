@@ -129,6 +129,13 @@ class CompareSVCalls(object):
             out, std = self.out_records[i], self.std_records[j]
             start_diff, len_diff = out.start - std.start, out.sv_len - std.sv_len
             s = '%s --> (i=%s, j=%s, start_diff=%s, len_diff=%s) --> %s' % (record2str(out), i, j, start_diff, len_diff, record2str(std))
+            if out.seq != '.' and std.seq != '.':
+                from .utils import write_fasta, bed2prefix, circular_align
+                out_seq_fn, std_seq_fn = 'tmp.' + bed2prefix(out) + '.svseq.fasta', 'tmp.' + bed2prefix(std) + '.svseq.fasta'
+                write_fasta(out_fa_fn=out_seq_fn, records=[(bed2prefix(out), out.seq)])
+                write_fasta(out_fa_fn=std_seq_fn, records=[(bed2prefix(std), std.seq)])
+                m4_record = circular_align(out_seq_fn, std_seq_fn)
+                s += ' --> %s' % (m4_record)
             ret.append(s)
         return '\n'.join(ret)
 
@@ -190,6 +197,7 @@ def run(args):
     print '---------------\n'
     print 'false positive calls:\n%s\n' % records2str(cmpsv.false_positive_calls)
     print '---------------\n'
+
     return 0
 
 def main():

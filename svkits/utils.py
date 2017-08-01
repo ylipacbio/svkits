@@ -8,7 +8,7 @@ Define utils used in
 from collections import defaultdict
 import os.path as op
 from pbcore.io import FastaReader
-from pbsv.independent.utils import realpath, rmpath, execute, execute_as_bash
+from pbsv.independent.utils import realpath, rmpath, execute, execute_as_bash, autofmt
 
 
 def get_movie_and_zmw_from_name(name):
@@ -162,8 +162,6 @@ def execute_cmds(cmds, dry_run):
         if not dry_run:
             execute(cmd)
 
-def make_subreads_bam_using_pbcore(movie2zmws, movie2bams, out_prefix, dry_run=False):
-    pass
 
 def make_subreads_bam(movie2zmws, movie2bams, out_prefix, dry_run=False):
     """
@@ -233,3 +231,68 @@ def mummer_plot(query_fa, target_fa, out_prefix, min_match_len=50):
     cmd = "mummerplot -f -l -png -p %s %s" % (out_prefix, mums_fn)
     execute(cmd)
     return out_ps, out_png
+
+#TODO: use pbsv_polish.utils.*
+def bed2prefix(bed_record):
+    fields = [bed_record.chrom, bed_record.start, bed_record.end, bed_record.sv_type, bed_record.sv_len]
+    return '_'.join([str(x) for x in fields])
+
+
+#TODO: use pbsv_polish.utils.*
+def write_fasta(out_fa_fn, records):
+    """Write a list of fasta records [(name, seq), ...,  (name, seq)] to out_fa_fn"""
+    from pbcore.io import FastaWriter
+    with FastaWriter(out_fa_fn) as w:
+        for r in records:
+            w.writeRecord(r[0], r[1])
+
+#TODO: use pbsv_polish.utils.*
+def _fn2fmtarg(fn):
+    fnext2fmtarg = {"m0": "-m 0", "m4": "-m 4", "bam": "--bam"}
+    return fnext2fmtarg[autofmt(fn, fnext2fmtarg.keys())[1]]
+
+#TODO: use pbsv_polish.utils.*
+def blasr_cmd(query_fn, target_fn, out_fn, nproc=8):
+    return "blasr {q} {t} {fmt} --out {out_fn} --nproc {nproc} --maxMatch 15 --bestn 10 --hitPolicy randombest".\
+            format(q=query_fn, t=target_fn, out_fn=out_fn, fmt=_fn2fmtarg(out_fn), nproc=nproc)
+
+#TODO: use pbsv_polish.utils.*
+def basename_prefix_of_fn(fn):
+    """Return base name prefix of a file path, e.g.,
+    ..doctest:
+        >>> basename_prefix_of_fn('/home/my.b.txt')
+        "my.b"
+    """
+    basename = op.basename(fn)
+    return basename[0:basename.rfind('.')] if '.' in basename else basename
+
+def __align(a_fa_fn, b_fa_fn):
+    from pbtranscript.io import BLASRM4Reader
+    out_m4_fn = op.join(op.dirname(a_fa_fn), basename_prefix_of_fn(a_fa_fn) +'.'+basename_prefix_of_fn(b_fa_fn)+'.m4')
+    execute(blasr_cmd(a_fa_fn, b_fa_fn, out_m4_fn))
+    alns = [r for r in BLASRM4Reader(out_m4_fn)]
+    if len(alns) != 1:
+        raise ValueError("M4 file %s must contain exactly one alignment"  % out_m4_fn)
+    return alns[0]
+
+def rotate_read(read_name, read_seq, break_point):
+    new_name = read_name + '__rotate__%s' % (break_point)
+    new_read = read_seq[break_point] +read_seq[0:break_point]
+    return new_name, new_read
+
+def circular_align(a_fa_fn, b_fa_fn):
+    aln = __align(a_fa_fn, b_fa_fn)
+
+    # rotate sequence in b_fa_fn
+    b_reads = [r for r in FastaReader(b_fa_fn)]
+    if len(b_reads) != 1:
+        raise ValueError("FASTA file %s must contain exactly one read"  % b_fa_fn)
+    b_read = b_reads[0]
+    break_point = aln.rStart
+    new_b_name, new_b_read = rotate_read(read_name=b_read.name, read_seq=b_read.sequence, break_point=break_point)
+    b_rotate_fn = b_fa_fn+'.rotate.%s' % (break_point) + '.fasta'
+    write_fasta(out_fa_fn=b_rotate_fn, records=[(new_b_name, new_b_read)])
+
+    # align a_fa_fn to rotated b_fa_fn
+    aln1 = __align(a_fa_fn, b_rotate_fn)
+    return aln if aln.score < aln1.score else aln1 # score the less the better

@@ -259,9 +259,6 @@ def blasr_cmd(query_fn, target_fn, out_fn, nproc=8):
 #TODO: use pbsv_polish.utils.*
 def basename_prefix_of_fn(fn):
     """Return base name prefix of a file path, e.g.,
-    ..doctest:
-        >>> basename_prefix_of_fn('/home/my.b.txt')
-        "my.b"
     """
     basename = op.basename(fn)
     return basename[0:basename.rfind('.')] if '.' in basename else basename
@@ -272,27 +269,44 @@ def __align(a_fa_fn, b_fa_fn):
     execute(blasr_cmd(a_fa_fn, b_fa_fn, out_m4_fn))
     alns = [r for r in BLASRM4Reader(out_m4_fn)]
     if len(alns) != 1:
-        raise ValueError("M4 file %s must contain exactly one alignment"  % out_m4_fn)
+        return None
+        #raise ValueError("M4 file %s must contain exactly one alignment"  % out_m4_fn)
     return alns[0]
 
 def rotate_read(read_name, read_seq, break_point):
     new_name = read_name + '__rotate__%s' % (break_point)
-    new_read = read_seq[break_point] +read_seq[0:break_point]
+    new_read = read_seq[break_point:] +read_seq[0:break_point]
     return new_name, new_read
+
+def get_only_read_in_fa(fa_fn):
+    reads = [r for r in FastaReader(fa_fn)]
+    if len(reads) != 1:
+        raise ValueError("FASTA file %s must contain exactly one read"  % fa_fn)
+    return reads[0]
+
+def rotate_only_read_in_fa(fa_fn, break_point):
+    read = get_only_read_in_fa(fa_fn)
+    new_name, new_read = rotate_read(read_name=read.name, read_seq=read.sequence, break_point=break_point)
+    rotate_fn = fa_fn + '.rotate.%s' % (break_point) + '.fasta'
+    write_fasta(out_fa_fn=rotate_fn, records=[(new_name, new_read)])
+    return rotate_fn
+
 
 def circular_align(a_fa_fn, b_fa_fn):
     aln = __align(a_fa_fn, b_fa_fn)
+    if aln is None:
+        return None
 
-    # rotate sequence in b_fa_fn
-    b_reads = [r for r in FastaReader(b_fa_fn)]
-    if len(b_reads) != 1:
-        raise ValueError("FASTA file %s must contain exactly one read"  % b_fa_fn)
-    b_read = b_reads[0]
-    break_point = aln.rStart
-    new_b_name, new_b_read = rotate_read(read_name=b_read.name, read_seq=b_read.sequence, break_point=break_point)
-    b_rotate_fn = b_fa_fn+'.rotate.%s' % (break_point) + '.fasta'
-    write_fasta(out_fa_fn=b_rotate_fn, records=[(new_b_name, new_b_read)])
+    # rotate a_fa_fn sequence
+    a_rotate_fn = rotate_only_read_in_fa(a_fa_fn, break_point=aln.qStart)
+    # rotate b_fa_fn sequence
+    b_rotate_fn = rotate_only_read_in_fa(b_fa_fn, break_point=aln.sStart)
 
-    # align a_fa_fn to rotated b_fa_fn
-    aln1 = __align(a_fa_fn, b_rotate_fn)
-    return aln if aln.score < aln1.score else aln1 # score the less the better
+    # align rotated a_fa_fn to rotated b_fa_fn
+    raln = __align(a_rotate_fn, b_rotate_fn)
+    if raln is None:
+        return aln
+    return aln if aln.score < raln.score else raln # score the less the better
+
+def m42str(r):
+    return "%s %s %s_%s/%s %s_%s/%s"  % (r.identity, r.strand, r.qStart, r.qEnd, r.qLength, r.sStart, r.sEnd, r.sLength)

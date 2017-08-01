@@ -255,7 +255,9 @@ class BedReader(ReaderBase):
                     fs = line.split()
                     def f(s):
                         return 'Insertion' if 'ins' in s.lower() else 'Deletion' if 'del' in s.lower() else 'None'
-                    yield BedRecord(chrom=fs[0], start=fs[1], end=fs[2], sv_type=f(fs[3]), sv_len=fs[4], seq='.', fmt='1/1:1:1')
+                    def g(s):
+                        return '.' if '#' in s else s
+                    yield BedRecord(chrom=fs[0], start=fs[1], end=fs[2], sv_type=f(fs[3]), sv_len=fs[4], seq=g(fs[4]), fmt='1/1:1:1')
                 except Exception as err:
                     msg = '{}\nError reading line {} of BED input:\n{}\n{!r}'.format(
                             traceback.format_exc(),

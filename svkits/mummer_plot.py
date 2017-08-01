@@ -12,7 +12,7 @@ import os.path as op
 from pbcore.util.Process import backticks
 from pbcore.io import FastaReader, FastaWriter
 from pbsv.run import _mktemp
-from svkits.utils import mummer_plot, realpath, rmpath
+from .utils import mummer_plot, realpath, rmpath
 
 
 def get_parser():

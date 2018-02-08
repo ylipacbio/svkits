@@ -7,7 +7,7 @@ import os.path as op
 import sys
 import json
 
-from pbsv.independent.utils import is_fastq, is_fasta
+from .utils import is_fastq, is_fasta
 from pbcore.io import FastaReader, FastaWriter, FastqReader, FastqWriter
 
 def get_parser():

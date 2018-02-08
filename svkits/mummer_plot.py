@@ -22,6 +22,7 @@ def get_parser():
     parser.add_argument("query_fasta", help="Query FASTA")
     parser.add_argument("target_fasta", help="Target FASTA")
     parser.add_argument("out_prefix", help="Output Prefix")
+    parser.add_argument("-l", "--min-match-len", default=20, help="mummer -l")
     parser.add_argument("--query_region", help="Query region to plot, asumming there is only one read in query, e.g., 0-100")
     parser.add_argument("--target_region", help="Target region to plot region, asumming there is only one read in target, e.g., 20-100")
     return parser
@@ -31,8 +32,7 @@ def web_path(fn):
     if realpath(fn).startswith(prefix):
         return 'file://mp-nac01/unixhome/' + realpath(fn)[len(prefix):]
     else:
-        raise ValueError("unknown web path for %r" % realpath(fn))
-
+        return '/Volumes/' + realpath(fn)
 
 def subset_fasta(in_fa, out_fa, region):
     """Assuming there is exactly one read in in_fa, region must be a tuple
@@ -65,7 +65,7 @@ def run(args):
         new_target_fasta = op.join(tmpdir, op.basename(target_fasta)) + '.' + args.target_region + '.fasta'
         subset_fasta(target_fasta, new_target_fasta, target_region)
 
-    out_ps, out_png = mummer_plot(new_query_fasta, new_target_fasta, out_prefix)
+    out_ps, out_png = mummer_plot(new_query_fasta, new_target_fasta, out_prefix, min_match_len=args.min_match_len)
     print "Dot plot of %r %r vs %r %r:\n%r\n%r\n" % (query_fasta, query_region, target_fasta, target_region, out_ps, out_png)
     print "Web Path: %r" % web_path(out_png)
 

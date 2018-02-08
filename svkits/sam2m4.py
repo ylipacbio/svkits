@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 from argparse import ArgumentParser
-from pbsv.io.linefile import X2PysamReader
+from pbsv.io.bamstream import SingleFileOpener
 import sys
 import os
 import os.path as op
 
 def sam2m4(fn):
-    reader = X2PysamReader(fn)._alignment_file
+    reader = SingleFileOpener(fn).alignfile
     for r in reader:
         strand = 1 if r.is_reverse else 0
         fields = [r.query_name, r.reference_name, 'score', 'similarity', 0, r.query_alignment_start, r.query_alignment_end, r.infer_query_length(), strand,  r.reference_start, r.reference_end, r.reference_length]

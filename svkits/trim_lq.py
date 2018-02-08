@@ -7,8 +7,7 @@ import os.path as op
 import sys
 import json
 
-from pbsv.independent.utils import is_fastq, is_fasta
-from pbcore.io import FastaReader, FastaWriter, FastqReader, FastqWriter
+from .utils import get_reader_cls_from_file, get_writer_cls_from_file, is_fasta, is_fastq
 
 def get_parser():
     """Set up and return argument parser."""
@@ -18,22 +17,6 @@ def get_parser():
     parser.add_argument("--windowsize", help="Compute average MapQV in windows of size", default=100, type=int)
     parser.add_argument("--min_qv", help="Minimum average MapQV in windows to separate HQ and LQ sequences", default=20, type=int)
     return parser
-
-def get_reader_cls_from_file(fn):
-    if is_fasta(fn):
-        return FastaReader
-    elif is_fastq(fn):
-        return FastqReader
-    else:
-        raise ValueError("Could not get reader for %s" % fn)
-
-def get_writer_cls_from_file(fn):
-    if is_fasta(fn):
-        return FastaWriter
-    elif is_fastq(fn):
-        return FastqWriter
-    else:
-        raise ValueError("Could not get reader for %s" % fn)
 
 def get_hq_start_end(seq, is_hq_f):
     """

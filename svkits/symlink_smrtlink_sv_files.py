@@ -59,11 +59,11 @@ class SMRTLinkSVFiles(object):
 
     @property
     def structural_variants_bed(self):
-        return op.join(self.root_dir, 'tasks/pbsvtools.tasks.call-0/structural_variants.bed')
+        return op.join(self.root_dir, 'tasks/pbsvtools.tasks.sort_sv-0/structural_variants.bed')
 
     @property
     def structural_variants_vcf(self):
-        return op.join(self.root_dir, 'tasks/pbsvtools.tasks.call-0/structural_variants.vcf')
+        return op.join(self.root_dir, 'tasks/pbsvtools.tasks.sort_sv-0/structural_variants.vcf')
 
 
 def make_symlinks(sl_dir, out_dir):
@@ -91,8 +91,6 @@ def get_parser():
     return parser
 
 def run(args):
-    parser = get_parser()
-    args = parser.parse_args(args)
     print args
     make_symlinks(sl_dir=args.smrtlink_job_dir, out_dir=args.out_dir)
 

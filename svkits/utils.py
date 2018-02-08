@@ -7,9 +7,60 @@ Define utils used in
 """
 from collections import defaultdict
 import os.path as op
-from pbcore.io import FastaReader
-from pbsv.independent.utils import realpath, rmpath, execute, execute_as_bash, autofmt
+from pbcore.io import FastaReader, FastaWriter, FastqReader, FastqWriter
+from pbsv.independent.utils import realpath, rmpath, execute
 
+def mkdir(path):
+    return execute('mkdir -p {}'.format(path))
+
+def is_fasta(fn):
+    """Return true if a file extension is fa or fasta"""
+    return _is_fmt(fn, ["fa", "fasta"])
+
+def is_fastq(fn):
+    """Return true if a file extension is fa or fasta"""
+    return _is_fmt(fn, ["fq", "fastq"])
+
+def get_reader_cls_from_file(fn):
+    """Return FastaReader, FastqReader or raise ValueError"""
+    if is_fasta(fn):
+        return FastaReader
+    elif is_fastq(fn):
+        return FastqReader
+    else:
+        raise ValueError("Could not get reader for %s" % fn)
+
+def get_writer_cls_from_file(fn):
+    """Return FastaWriter, FastqWriter or raise ValueError"""
+    if is_fasta(fn):
+        return FastaWriter
+    elif is_fastq(fn):
+        return FastqWriter
+    else:
+        raise ValueError("Could not get reader for %s" % fn)
+
+def autofmt(filename, validfmts, defaultfmt=None):
+    """Infer the format of a file from its filename.  As a convention all the
+    format to be forced with prefix followed by a colon (e.g. "fmt:filename").
+
+    `validfmts` is a list of acceptable file formats
+    `defaultfmt` is the format to use if the extension is not on the valid list
+
+    returns `filename`,`fmt`
+    """
+    colonix = filename.find(":")
+    if colonix != -1:
+        extension = filename[:colonix]
+        filename = filename[(colonix+1):]
+    else:
+        extension = None
+        for validfmt in validfmts:
+            if filename.endswith(validfmt):
+                extension = filename[-len(validfmt):]
+    return filename, (extension.lower() if extension in validfmts else defaultfmt)
+
+def _is_fmt(fn, validfmts):
+    return autofmt(fn, validfmts)[1] in validfmts
 
 def get_movie_and_zmw_from_name(name):
     """Given a string of pacbio zmw name or read name, return movie and zmw"""

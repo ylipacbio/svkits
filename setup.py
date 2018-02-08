@@ -47,17 +47,13 @@ setup(
     entry_points={'console_scripts': [
         'make-subreads-bam-from-fasta = svkits.make_subreads_bam_from_fasta:main',
         'make-subreads-bam-from-zmws = svkits.make_subreads_bam_from_zmws:main',
-        'validate-sv-bed = svkits.validate_sv_bed:main',
         'add-an-indel-to-fasta = svkits.add_an_indel_to_fasta:main',
         'add-indels-to-fasta = svkits.add_indels_to_fasta:main',
         'mummer-plot = svkits.mummer_plot:main',
         'sim-x2coverage = svkits.sim_x2coverage:main',
-        'trim_lq = svkits.trim_lq:main',
         'fq2fa = svkits.fq2fa:main',
         'symlink_smrtlink_sv_files = svkits.symlink_smrtlink_sv_files:main',
-        'sv_transform_coordinate = svkits.sv_transform_coordinate:main',
-        'sam2m4 = svkits.sam2m4:main'
-
+        'sam2m4 = svkits.sam2m4:main',
     ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),
     tests_require=['nose'],

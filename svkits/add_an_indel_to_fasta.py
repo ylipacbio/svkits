@@ -14,9 +14,13 @@ import os.path as op
 from pbcore.util.Process import backticks
 from pbcore.io import FastaRecord, FastaWriter, FastaReader
 from pbsv.io.VcfIO import BedRecord, BedWriter
+from pbsv.independent.common import SvFmts
+from pbsv.independent.utils import revcomp
 
 
 ARTIFICIAL_FMT = '0/1:3:6'
+ARTIFICIAL_SAMPLE = 'UnannotatedSample'
+ARTIFICIAL_FMTS = SvFmts.fromDict({ARTIFICIAL_SAMPLE: ARTIFICIAL_FMT})
 
 def get_parser():
     """return arg parser"""
@@ -54,8 +58,9 @@ def del_a_substr_from_read(name, seq, pos, n_bases, simple_name=False):
         out_name = name.split(' ')[0] + ' ' + ('' if len(name.split(' ')) == 1 else name.split(' ')[1]) + ';d_%s_%s' % (pos, n_bases)
     out_read = FastaRecord(out_name, out_seq)
     bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos,
-                           sv_type='Insertion', sv_len=n_bases, seq=None,
-                           fmt=ARTIFICIAL_FMT, annotations=None)
+                           sv_id = 'pbid.ins',
+                           sv_type='Insertion', sv_len=n_bases, alt=None,
+                           fmts=ARTIFICIAL_FMTS, annotations=None)
     return (out_read, bed_record)
 
 
@@ -63,7 +68,7 @@ def inv_a_substr_of_seq(seq, pos, n_bases):
     """Inverse n_bases starting from pos of sequence (seq)"""
     if pos < 0 or pos + n_bases > len(seq):
         raise ValueError("Could not inverse %r bases starting from pos %r in sequence of length %r" % (n_bases, pos, len(seq)))
-    return seq[0:pos] + seq[pos:pos+n_bases][::-1] + seq[pos+n_bases:]
+    return seq[0:pos] + revcomp(seq[pos:pos+n_bases]) + seq[pos+n_bases:]
 
 
 def inv_a_substr_of_read(name, seq, pos, n_bases, simple_name=False):
@@ -76,8 +81,9 @@ def inv_a_substr_of_read(name, seq, pos, n_bases, simple_name=False):
         out_name = name.split(' ')[0] + ' ' + ('' if len(name.split(' ')) == 1 else name.split(' ')[1]) + ';v_%s_%s' % (pos, n_bases)
     out_read = FastaRecord(out_name, out_seq)
     bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos,
-                           sv_type='Inversion', sv_len=n_bases, seq=None,
-                           fmt=ARTIFICIAL_FMT, annotations=None)
+                           sv_id = 'pbid.inv',
+                           sv_type='Inversion', sv_len=n_bases, alt=None,
+                           fmts=ARTIFICIAL_FMTS, annotations=None)
     return (out_read, bed_record)
 
 
@@ -107,8 +113,9 @@ def ins_a_str_to_read(name, seq, pos, n_bases, simple_name=False):
         out_name = name.split(' ')[0] + ' ' + ('' if len(name.split(' ')) == 1 else name.split(' ')[1]) + ';i_%s_%s' % (pos, n_bases)
     out_read = FastaRecord(out_name, out_seq)
     bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos+n_bases,
-                           sv_type='Deletion', sv_len=n_bases, seq=None,
-                           fmt=ARTIFICIAL_FMT, annotations=None)
+                           sv_id = 'pbid.del',
+                           sv_type='Deletion', sv_len=n_bases, alt=None,
+                           fmts=ARTIFICIAL_FMTS, annotations=None)
     return (out_read, bed_record)
 
 
@@ -153,7 +160,7 @@ def run(args):
     else:
         raise ValueError("%s can either insert a string to a reference sequence or delete a substring from a referece sequence." % op.basename(__file__))
 
-    with BedWriter(out_bed) as bed_writer:
+    with BedWriter(out_bed, samples=[ARTIFICIAL_SAMPLE]) as bed_writer:
         bed_writer.writeRecord(bed_record)
 
     with FastaWriter(out_fasta) as fasta_writer:

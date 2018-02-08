@@ -170,7 +170,7 @@ def run(args):
     bed_records = []
 
     fasta_writer = FastaWriter(out_fasta)
-    bed_writer =  BedWriter(out_bed)
+    bed_writer =  BedWriter(out_bed, samples=[])
 
     for name in n_d.keys():
         # work on sequence/chromosome with name

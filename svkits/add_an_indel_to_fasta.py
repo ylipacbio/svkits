@@ -119,6 +119,24 @@ def ins_a_str_to_read(name, seq, pos, n_bases, simple_name=False):
     return (out_read, bed_record)
 
 
+def inv_a_str_to_read(name, seq, pos, n_bases, simple_name=False):
+    """
+    Introduce an inversion of n_bases to pos of sequence (seq) of read (name)
+    return out_read, bed_record
+    """
+    assert isinstance(seq, str)
+    out_seq = inv_a_str_to_seq(seq=seq, pos=pos, n_bases=n_bases)
+    out_name = name + ' ' + 'ORIGINALLEN=%s;ACTION=INV:POS=%s;SVLEN=%s;NEWLEN=%s' % (len(seq), pos, n_bases, len(out_seq))
+    if simple_name:
+        out_name = name.split(' ')[0] + ' ' + ('' if len(name.split(' ')) == 1 else name.split(' ')[1]) + ';i_%s_%s' % (pos, n_bases)
+    out_read = FastaRecord(out_name, out_seq)
+    bed_record = BedRecord(chrom=name.split(' ')[0], start=pos, end=pos+n_bases,
+                           sv_id = 'pbid.inv',
+                           sv_type='Inversion', sv_len=n_bases, alt=None,
+                           fmts=ARTIFICIAL_FMTS, annotations=None)
+    return (out_read, bed_record)
+
+
 def fasta_to_ordereddict(in_fasta):
     """Convert a fasta file to OrderedDict([read_name: read_sequence])"""
     d = OrderedDict()

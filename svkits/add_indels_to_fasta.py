@@ -2,7 +2,7 @@
 
 
 """
-Add indels (insertions and deletions) to a reference FASTA file,
+Add indels (insertions, deletions, and inversions) to a reference FASTA file,
 and make BED of SV calls mapping subreads of the reference FASTA file
 to the modified FASTA.
 """
@@ -18,7 +18,8 @@ from pbcore.util.Process import backticks
 from pbcore.io import FastaRecord, FastaWriter, FastaReader
 from pbsv.independent.common import SvType
 from pbsv.io.VcfIO import BedRecord, BedWriter
-from .add_an_indel_to_fasta import fasta_to_ordereddict, get_del_pos, get_ins_pos, del_a_substr_from_read, ins_a_str_to_read
+from .add_an_indel_to_fasta import (fasta_to_ordereddict, get_del_pos, get_ins_pos,
+        del_a_substr_from_read, ins_a_str_to_read, inv_a_str_to_read, inv_a_substr_of_read)
 
 logging.basicConfig(level=logging.DEBUG, format='Log: %(message)s')
 
@@ -47,6 +48,7 @@ the original reference to the modified reference file."""
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--insert", action='store_true', help="Insert indels")
     group.add_argument("--delete", action='store_true', help="Delete indels")
+    group.add_argument("--inverse", action='store_true', help="Inverse a substring of a sequence in in_fasta, and make a BED file with an Inversion SV call")
     return parser
 
 
@@ -117,15 +119,17 @@ def get_del_poses(l_seq, lens, numbers):
 
 
 def get_ins_poses(l_seq, lens, numbers):
-    """Get insertion indels' starting positions"""
+    """Get insertion/inversion indels' starting positions"""
     poses = sorted(np.random.randint(low=0, high=int(l_seq * 0.8), size=sum(numbers))) # pylint: disable=no-member
     for index in range(1, len(poses)):
         pos, pre_pos = poses[index], poses[index-1]
         if pos - pre_pos < max(lens): # insertion pos should be sparse for convenience of simulation
             poses[index] = poses[index] + max(lens)
         if len(poses) > 0 and poses[len(poses)-1] > l_seq:
-            raise ValueError("Could not successfully insert indels (lengths %r, numbers %r) on sequence of length %s, try again!" % (lens, numbers, l_seq))
+            raise ValueError("Could not successfully insert/invert (lengths %r, numbers %r) on sequence of length %s, try again!" % (lens, numbers, l_seq))
     return poses
+
+get_inv_poses = get_ins_poses
 
 
 def expand_objects(objs, numbers):
@@ -149,7 +153,7 @@ def run(args):
     """run main"""
     in_fasta, out_fasta, out_bed = args.in_fasta, args.out_fasta, args.out_bed
     lens, numbers = args.lens, args.numbers
-    indel_type = SvType(SvType.Insertion) if args.insert else SvType(SvType.Deletion)
+    indel_type = SvType(SvType.Insertion) if args.insert else SvType(SvType.Deletion) if args.delete else SvType(SvType.Inversion)
     logging.info("Locals %r" % locals())
 
     _reads_d = fasta_to_ordereddict(in_fasta)
@@ -182,7 +186,7 @@ def run(args):
         expanded_lens = expand_objects(objs=this_lens, numbers=this_numbers)
         poses = None
         f = None
-        logging.info("Selecting sequence %r, sequence length %s, indel lens=%r, indel numbers=%r" % (name, l_new_seq, this_lens, this_numbers))
+        logging.info("Selecting sequence %r, sequence length %s, indel/inv lens=%r, indel/inv numbers=%r" % (name, l_new_seq, this_lens, this_numbers))
         if indel_type.is_Deletion: # if indel type is deletion
             poses = get_del_poses(l_seq=l_new_seq, lens=this_lens, numbers=this_numbers)
             logging.info("Delete positions are: %r" % poses)
@@ -191,11 +195,15 @@ def run(args):
             poses = get_ins_poses(l_seq=l_new_seq, lens=this_lens, numbers=this_numbers)
             logging.info("Insert positions are: %r" % poses)
             f = ins_a_str_to_read
+        elif indel_type.is_Inversion:
+            poses = get_inv_poses(l_seq=l_new_seq, lens=this_lens, numbers=this_numbers)
+            logging.info("Inversion positions are %r" % poses)
+            f = inv_a_substr_of_read
         else:
             raise ValueError("Unknown indel type %s" % indel_type)
 
         for l, pos in zip(expanded_lens, poses):
-            # add an indel of l bps to sequence/chromosome name
+            # add an indel/inv of l bps to sequence/chromosome name
             new_obj, bed_record = f(name=new_name, seq=new_seq, pos=pos, n_bases=l, simple_name=True)
             new_name = new_obj.name
             new_seq = new_obj.sequence

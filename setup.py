@@ -54,6 +54,7 @@ setup(
         'fq2fa = svkits.fq2fa:main',
         'symlink_smrtlink_sv_files = svkits.symlink_smrtlink_sv_files:main',
         'sam2m4 = svkits.sam2m4:main',
+        'scan-fasta = svkits.scan_fasta:main',
     ]},
     install_requires=_get_requirements(_get_local_file(_REQUIREMENTS_FILE)),
     tests_require=['nose'],

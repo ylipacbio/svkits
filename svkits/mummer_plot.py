@@ -34,25 +34,32 @@ def web_path(fn):
     else:
         return '/Volumes/' + realpath(fn)
 
+
 def subset_fasta(in_fa, out_fa, region):
     """Assuming there is exactly one read in in_fa, region must be a tuple
-    of (start, end), extract read[start:end] and save to out_fa """
-    start, end = region
-    start, end = int(start), int(end)
-    rs = [r for r in FastaReader(in_fa)]
-    if (len(rs) != 1):
-        raise ValueError("%r must contain exactly one read." % in_fa)
-    r = rs[0]
-    if start < 0 or start > end or end < 0 or end > len(r.sequence):
-        raise ValueError("Could not get substring (%s, %s) from sequence of length %s" % (start, end, len(r.sequence)))
+    of (start, end), extract read[start:end] and save to out_fa
+    """
+    from pbsv.libs import Fastafile
+    fileobj = Fastafile(in_fa)
+    if ':' in region:
+        chrom, start_end = region.split(':')
+        start, end = [int(x) for x in start_end.split('-')]
+    else:
+        chrom, start, end = region, 0, dict(zip(fileobj.references, fileobj.lengths))[region]
+
+    try:
+        seq = fileobj.fetch(str(chrom), int(start), int(end))
+    except Exception:
+        raise ValueError("Could not get substring (%s, %s, %s) from %s" % (chrom, start, end, fileobj.filename))
+
     with FastaWriter(out_fa) as writer:
-        writer.writeRecord(r.name+'|%s_%s' % (start, end), r.sequence[start:end])
+        writer.writeRecord('%s:%s-%s' % (chrom, start, end), seq)
 
 
 def run(args):
     query_fasta, target_fasta, out_prefix = args.query_fasta, args.target_fasta, args.out_prefix
-    query_region = args.query_region.split('-') if args.query_region is not None else None
-    target_region = args.target_region.split('-') if args.target_region is not None else None
+    query_region = args.query_region if args.query_region is not None else None
+    target_region = args.target_region if args.target_region is not None else None
 
     new_query_fasta, new_target_fasta = query_fasta, target_fasta
     tmpdir = _mktemp()

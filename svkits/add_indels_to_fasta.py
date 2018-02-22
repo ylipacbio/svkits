@@ -19,7 +19,7 @@ from pbcore.io import FastaRecord, FastaWriter, FastaReader
 from pbsv.independent.common import SvType
 from pbsv.io.VcfIO import BedRecord, BedWriter
 from .add_an_indel_to_fasta import (fasta_to_ordereddict, get_del_pos, get_ins_pos,
-        del_a_substr_from_read, ins_a_str_to_read, inv_a_str_to_read, inv_a_substr_of_read)
+        del_a_substr_from_read, ins_a_str_to_read, inv_a_substr_of_read)
 
 logging.basicConfig(level=logging.DEBUG, format='Log: %(message)s')
 
@@ -159,6 +159,8 @@ def run(args):
     _reads_d = fasta_to_ordereddict(in_fasta)
     reads_d = filter_dict_by_keys(_reads_d, args.name_pattern)
     logging.info("Choosable reads in fasta: %r" % reads_d.keys())
+    import pdb
+    pdb.set_trace()
 
     lens_d = {k:len(reads_d[k]) for k in reads_d.keys()}
     total_l = sum(len(reads_d[k]) for k in reads_d.keys()) # total number of bases in fasta
@@ -169,12 +171,13 @@ def run(args):
     p_d = {k:(lens_d[k]*1.0/total_l) for k in lens_d.keys()}
 
     # n_d[chr][size] -> num of indels of size in chromosome
-    n_d = swap_dict_dict_k1_k2(weighted_choose_multiple(total_n_dict=dict(zip(lens, numbers)), p_dict=p_d))
+    w_ = weighted_choose_multiple(total_n_dict=dict(zip(lens, numbers)), p_dict=p_d)
+    n_d = swap_dict_dict_k1_k2(w_)
 
     bed_records = []
 
     fasta_writer = FastaWriter(out_fasta)
-    bed_writer =  BedWriter(out_bed, samples=[])
+    bed_writer =  BedWriter(out_bed, samples=['UnannotatedSample'])
 
     for name in n_d.keys():
         # work on sequence/chromosome with name
@@ -213,9 +216,9 @@ def run(args):
         # write modified sequence
         fasta_writer.writeRecord(FastaRecord(new_name, new_seq))
 
-        # write all bed records
-        for bed_record in bed_records:
-            bed_writer.writeRecord(bed_record)
+    # write all bed records
+    for bed_record in bed_records:
+        bed_writer.writeRecord(bed_record)
 
     fasta_writer.close()
     bed_writer.close()

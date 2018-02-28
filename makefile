@@ -10,3 +10,10 @@ unit-test:
 	nosetests ${MY_NOSE_FLAGS} utests.py
 cram:
 	cd tests/cram && cram tests/cram/*.t && cd ..
+autofmt:
+	find svkits -type f -name '*.py' | xargs autoflake --in-place --remove-unused-variables --expand-star-imports
+	find svkits -type f -name '*.py' | xargs autopep8  --in-place --max-line-length 120
+vulture:
+	vulture svkits/
+clean:
+	find . -type f -name '*.pyc' |xargs rm -f

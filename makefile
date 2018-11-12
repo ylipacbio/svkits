@@ -3,6 +3,8 @@ MY_NOSE_FLAGS?=-v -s
 wheel:
 	# This is basically a syntax check.
 	python setup.py bdist_wheel
+doctest:
+	py.test ${MY_TEST_FLAGS} --doctest-modules svkits/
 pylint:
 	pylint --errors-only svkits/
 unit-test:

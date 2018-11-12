@@ -2,4 +2,4 @@ data/*
 *.pyc
 svkits.egg-info
 tests/out/*
-../.pytest_cache/
+.pytest_cache/

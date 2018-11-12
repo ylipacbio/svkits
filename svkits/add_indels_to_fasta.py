@@ -159,8 +159,6 @@ def run(args):
     _reads_d = fasta_to_ordereddict(in_fasta)
     reads_d = filter_dict_by_keys(_reads_d, args.name_pattern)
     logging.info("Choosable reads in fasta: %r" % reads_d.keys())
-    import pdb
-    pdb.set_trace()
 
     lens_d = {k:len(reads_d[k]) for k in reads_d.keys()}
     total_l = sum(len(reads_d[k]) for k in reads_d.keys()) # total number of bases in fasta

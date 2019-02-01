@@ -47,6 +47,7 @@ setup(
     entry_points={'console_scripts': [
         'make-subreads-bam-from-fasta = svkits.make_subreads_bam_from_fasta:main',
         'make-subreads-bam-from-zmws = svkits.make_subreads_bam_from_zmws:main',
+        'restore-bam-from-xml = svkits.restore_bam_from_xml:main',
         'add-an-indel-to-fasta = svkits.add_an_indel_to_fasta:main',
         'add-indels-to-fasta = svkits.add_indels_to_fasta:main',
         'mummer-plot = svkits.mummer_plot:main',
